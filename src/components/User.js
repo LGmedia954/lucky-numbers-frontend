@@ -5,7 +5,7 @@ export class User extends Component {
     const { username } = this.props;
     return (
       <div>
-        <h3>{username}</h3>
+        <h3>Good Luck {username}!</h3>
       </div>
     );
   }
