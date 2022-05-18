@@ -10,7 +10,7 @@
 
 [X] There are 3 routes.
 
-[ ] React-router is being used with proper RESTful routing.
+[X] React-router is being used with proper RESTful routing.
 
 [ ] Redux and redux-thunk middleware are being used to modify state change and make use of async actions to send data and receive data from the server.
 

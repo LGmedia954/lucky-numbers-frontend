@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
 
 class Picker extends React.Component {
   
@@ -34,4 +33,4 @@ class Picker extends React.Component {
   }
 }
 
-render(<Picker />, document.getElementById('container'));
+export default Picker;

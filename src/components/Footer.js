@@ -4,10 +4,10 @@ export class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-        &copy; 2022 Leslie G &bull; Lucky Numbers
+        &copy; 2022 Lucky Numbers &bull; Leslie G.
       </footer>
     );
   }
-};
+}
 
 export default Footer;
