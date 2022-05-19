@@ -4,7 +4,7 @@ export class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-        &copy; 2022 Lucky Numbers &bull; Leslie G.
+        &copy; 2022 Lucky Numbers &nbsp; &bull; &nbsp; Leslie G.
       </footer>
     );
   }

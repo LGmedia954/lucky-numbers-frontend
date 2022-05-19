@@ -1,72 +1,56 @@
-.blueglitter {
+body {
   background-image: url("https://lg-mediagroup.com/deepblueglitter.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  z-index: -100 !important;
+}
+
+.App {
+  text-align: center;
+  position: relative;
+  z-index: 100 !important;
+}
+
+.nav {
+  display: block;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  background-color: #0e0e3f;
 }
 
 h1 {
+  font-family: 'Luckiest Guy', cursive;
   color: yellow;
-  font-size: 7vw;
-  text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.2);
+  font-size: 50px;
+  /* text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.2); */
 }
 
-#box1 {
-  /* position: relative; */
-  border-radius: 25px;
-  border: 2px solid black;
-  background: red;
-  padding: 20px;
-  width: 200px;
-  height: 150px;
-  /* margin: auto; */
-  /* padding: 15px 0px; */
+.viewable {
+  padding: 150px 0;
+  text-align: center;
+  position: relative;
+  z-index: 110 !important;
 }
 
-#box2 {
-  border-radius: 25px;
-  border: 2px solid black;
-  background: orange;
-  padding: 20px;
-  width: 200px;
-  height: 150px;
+.ui input {
+  max-width: 200px;
 }
 
-#box3 {
-  border-radius: 25px;
-  border: 2px solid black;
-  background: yellow;
-  padding: 20px;
-  width: 200px;
-  height: 150px;
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #0e0e3f;
+  color: #FFFF00;
+  font-size: 10px;
+  text-align: center;
+  padding: 5px;
 }
 
-#box4 {
-  border-radius: 25px;
-  border: 2px solid black;
-  background: green;
-  padding: 20px;
-  width: 200px;
-  height: 150px;
-}
 
-#box5 {
-  border-radius: 25px;
-  border: 2px solid black;
-  background: blue;
-  padding: 20px;
-  width: 200px;
-  height: 150px;
-}
-
-#box6 {
-  border-radius: 25px;
-  border: 2px solid black;
-  background: indigo;
-  padding: 20px;
-  width: 200px;
-  height: 150px;
-}
 
 /* body {
   margin: 0;

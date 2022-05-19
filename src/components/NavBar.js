@@ -5,17 +5,15 @@ export class Navbar extends Component {
   render() {
     return (
       <div className="nav">
-        <ul>
-          <li><Link exact to="/" className="ui button">Home</Link></li>
+        <Link to="/" className="ui inverted yellow button">Home</Link>
 
-          <li><Link exact to="/users/new" className="ui button">New User</Link></li>
+        <Link to="/users/new" className="ui inverted yellow button">New User</Link>
 
-          <li><Link exact to="/users" className="ui button">Users</Link></li>
+        <Link to="/users" className="ui inverted yellow button">Users</Link>
 
-          <li><Link exact to="/rounds/new" className="ui button">New Round</Link></li>
+        <Link to="/rounds/new" className="ui inverted yellow button">New Round</Link>
 
-          <li><Link exact to="/rounds" className="ui button">Rounds</Link></li>
-          </ul>
+        <Link to="/rounds" className="ui inverted yellow button">Rounds</Link>
       </div>
     );
   }

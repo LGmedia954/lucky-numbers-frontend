@@ -5,7 +5,7 @@
 //   };
 // };
 
-export const getUser = () => {
+export const getUsers = () => {
   return (dispatch) => {
     dispatch({ type: "LOADING" });
     fetch("http://localhost:3000/users")

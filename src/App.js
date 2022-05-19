@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { getUsers } from "./actions/users";
 import Home from "./components/Home";
 import UserForm from "./components/UserForm";
@@ -16,19 +16,20 @@ class App extends React.Component {
     this.props.getUsers();
   }
   render() {
-
     return (
+     <div className="App">
       <Router>
-        <NavBar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/users/new" component={<UserForm />} />
-          <Route path="/users" component={<UsersContainer />} />
-          <Route path="/rounds/new" component={<NewGameContainer />} />
-          <Route path="/rounds" component={<GameRoundsContainer />} />
-          </Switch>
+      <NavBar />
+        <Routes>
+          <Route path="/" element={Home} />
+          <Route path="/users/new" element={<UserForm />} />
+          <Route path="/users/index" element={<UsersContainer />} />
+          <Route path="/rounds/new" element={<NewGameContainer />} />
+          <Route path="/rounds" element={<GameRoundsContainer />} />
+        </Routes>
         <Footer />
       </Router>
+      </div>
     );
   }
 }

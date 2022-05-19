@@ -29,23 +29,25 @@ export class UserForm extends Component {
 
   render() {
     return(
-      <form onSubmit={(event) => this.handleOnSubmit(event)}>
+      <div className="viewable">
+      <form className="ui small form" onSubmit={(event) => this.handleOnSubmit(event)}>
         <p>
-          <input
+          <input className="ui small input"
             type="text"
             onChange={(event) => this.handleOnNameChange(event)}
             id="email"
             placeholder="Email" />
         </p>
         <p>
-          <input
+          <input className="ui small input"
             type="text"
             onChange={(event) => this.handleOnLocationChange(event)}
             id="username"
             placeholder="Username" />
         </p>
-        <input type="submit" />
+        <input type="submit" className="ui inverted yellow button" />
       </form>
+      </div>
     );
   }
 };
