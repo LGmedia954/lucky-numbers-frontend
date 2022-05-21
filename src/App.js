@@ -24,7 +24,7 @@ class App extends React.Component {
       <NavBar />
         <Routes>
           <Route path="/" element={Home} />
-          <Route path="/users/new" element={<UserForm />} />
+          <Route path="/users/create" element={<UserForm />} />
           <Route path="/users/index" element={<UsersContainer />} />
           <Route path="/rounds/new" element={<NewGameContainer />} />     
           <Route path="/rounds/index" element={<RoundsContainer />} />

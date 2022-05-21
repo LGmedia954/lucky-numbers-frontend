@@ -4,8 +4,8 @@ export class Round extends Component {
   render() {
     const { title, pick_one, pick_two, pick_three, pick_four, pick_five, pick_six } = this.props;
     return (
-      <div>
-        <h3>Lucky Picks!</h3>
+      <div className="viewable">
+        <h2>Lucky Picks!</h2>
         <table className="">
           <tr>
             <td>{title}</td>

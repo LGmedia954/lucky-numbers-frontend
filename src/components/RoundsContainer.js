@@ -3,7 +3,7 @@ import Rounds from './Rounds';
 
 const RoundsContainer = () => {
   return (
-    <div className="container">
+    <div className="viewable">
       <Rounds />
     </div>
   )

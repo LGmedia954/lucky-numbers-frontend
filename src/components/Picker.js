@@ -2,7 +2,8 @@
 // import { render } from 'react-dom';
 import React, { Component } from "react";
 
-class Picker extends React.Component {
+// class Picker extends React.Component {
+export class Picker extends Component {
   
   constructor(props) {
     super(props);
@@ -13,24 +14,26 @@ class Picker extends React.Component {
   handleClick() {
     const min = Math.ceil(1);
     const max = Math.floor(70);
-    const rand = Math.floor(Math.random() * (max - min + 1)) + min;
-    this.setState({ random: this.state.random + rand });
+    const rand = Math.floor(Math.random() * (max - min) + min);
+    // this.setState({ random: this.state.random + rand });
+    // the above was giving me an added tally
+    this.setState({ random: rand });
   }
 
   render() {
     return (
-      <div className="">
-      <h3>Lucky Number Generator</h3><br /><br />
+      <div>
+      <h2>Lucky Number Generator</h2>
+        <div id='pick'>
+          <h1>{this.state.random}</h1>
+        </div><br />
       <button className="ui inverted yellow button" onClick={this.handleClick.bind(this)}>Click</button>
-        <div className="card" style={{marginTop:"10px"}}>
-          <div className="card-block">
-            The number is: {this.state.random}
-          </div>
-        </div>
+        <br /><br />
       </div>
     );
   }
 }
 
-// render(<Picker />, document.getElementById(''));
+// render(<Picker />, document.getElementById('pick'));
 export default Picker;
+

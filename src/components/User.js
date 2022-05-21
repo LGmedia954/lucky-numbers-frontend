@@ -1,12 +1,16 @@
 import React, { Component } from "react";
+import Round from './Round';
 
 export class User extends Component {
   render() {
     const { username } = this.props;
     return (
-      <div>
-        <h3>Good Luck {username}!</h3>
-      </div>
+      <div className="viewable">
+        <h2>Good Luck {username}!</h2>
+        <div>
+          <Round />
+        </div>
+      </div>      
     );
   }
 }

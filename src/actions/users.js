@@ -9,7 +9,7 @@ export const getUsers = () => {
 
 export const addUser = (user, history) => {
   return (dispatch) => {
-    fetch("http://localhost:3001/users", {
+    fetch("http://localhost:3000/users", {
       method: "POST",
       headers: {
         Accept: "application/json",

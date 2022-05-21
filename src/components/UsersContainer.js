@@ -3,7 +3,7 @@ import Users from './Users';
 
 const UsersContainer = () => {
   return (
-    <div className="container">
+    <div className="viewable">
       <Users />
     </div>
   )

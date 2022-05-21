@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addRound } from "./actions/rounds"
+import { addRound } from "../actions/rounds";
 
 export class RoundForm extends Component {
   state = {
@@ -33,53 +33,46 @@ export class RoundForm extends Component {
     return (
       <div>
         <h2>Save Your Round!</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form class="ui small form" onSubmit={this.handleSubmit}>
           <div>
-            <label>Game Title</label>
             <input className="ui small input"
-              type="text" name="title" id="title"
+              type="text" name="title" id="title" placeholder="Game Title"
               value={this.state.title}
               onChange={this.handleChange}/>
           </div><br />
           <div>
-            <label>Pick 1</label>
             <input className="ui small input"
-              type="number" name="pick_one" id="pick_one"
+              type="number" name="pick_one" id="pick_one" placeholder="Pick 1"
               value={this.state.pick_one}
               onChange={this.handleChange}/>
           </div><br />
           <div>
-            <label>Pick 2</label>
             <input className="ui small input"
-              type="number" name="pick_two" id="pick_two"
+              type="number" name="pick_two" id="pick_two" placeholder="Pick 2"
               value={this.state.pick_two}
               onChange={this.handleChange}/>
           </div><br />
           <div>
-            <label>Pick 3</label>
             <input className="ui small input"
-              type="number" name="pick_three" id="pick_three"
+              type="number" name="pick_three" id="pick_three" placeholder="Pick 3"
               value={this.state.pick_three}
               onChange={this.handleChange}/>
           </div><br />
           <div>
-            <label>Pick 4</label>
             <input className="ui small input"
-              type="number" name="pick_four" id="pick_four"
+              type="number" name="pick_four" id="pick_four" placeholder="Pick 4"
               value={this.state.pick_four}
               onChange={this.handleChange}/>
           </div><br />
           <div>
-            <label>Pick 5</label>
             <input className="ui small input"
-              type="number" name="pick_five" id="pick_five"
+              type="number" name="pick_five" id="pick_five" placeholder="Pick 5"
               value={this.state.pick_five}
               onChange={this.handleChange}/>
           </div><br />
           <div>
-            <label>Pick 6</label>
             <input className="ui small input"
-              type="number" name="pick_six" id="pick_six"
+              type="number" name="pick_six" id="pick_six" placeholder="Pick 6"
               value={this.state.pick_six}
               onChange={this.handleChange}/>
           </div><br />

@@ -8,7 +8,7 @@ class Users extends Component {
     let users = this.props.users.map((user, index) => <li key={index}>{user.username}</li>);
 
     return (
-      <div>
+      <div className="viewable">
         <ul>
           {users}
         </ul>

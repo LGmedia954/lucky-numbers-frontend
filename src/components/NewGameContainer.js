@@ -1,19 +1,16 @@
 import React from 'react'
 import Picker from './Picker';
 import RoundForm from './RoundForm';
-import Round from './Round';
 
 const NewGameContainer = () => {
   return (
-    <div className="game">
+    <div className="viewable">
       <div>
         <Picker />
-
       </div>
-        <br />
+        <br /><br />
       <div>
         <RoundForm />
-        <Round />
       </div>
     </div>
   )

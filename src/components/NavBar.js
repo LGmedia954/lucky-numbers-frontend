@@ -7,7 +7,7 @@ export class Navbar extends Component {
       <div className="nav">
         <Link to="/" className="ui inverted yellow button">Home</Link>
 
-        <Link to="/users/new" className="ui inverted yellow button">New User</Link>
+        <Link to="/users/create" className="ui inverted yellow button">New User</Link>
 
         <Link to="/users/index" className="ui inverted yellow button">Users</Link>
 
