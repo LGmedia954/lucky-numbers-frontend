@@ -1,4 +1,5 @@
 import React from 'react';
+import { render } from 'react-dom';
 
 class Picker extends React.Component {
   
@@ -18,14 +19,11 @@ class Picker extends React.Component {
   render() {
     return (
       <div className="row">
-        <div className="col-12">
-          <h3 className="text-center">Lucky Number Generator</h3>
-          <br /><br />
-          <button className="btn btn-primary" onClick={this.handleClick.bind(this)}>Click</button>
-          <div className="card" style={{marginTop:"10px"}}>
-            <div className="card-block">
-              The number is: {this.state.random}
-            </div>
+      <h3 className="text-center">Lucky Number Generator</h3><br /><br />
+      <button className="btn btn-primary" onClick={this.handleClick.bind(this)}>Click</button>
+        <div className="card" style={{marginTop:"10px"}}>
+          <div className="card-block">
+            The number is: {this.state.random}
           </div>
         </div>
       </div>
@@ -33,4 +31,5 @@ class Picker extends React.Component {
   }
 }
 
+// render(<Picker />, document.getElementById(''));
 export default Picker;

@@ -1,10 +1,3 @@
-// export const addUser = (user) => {
-//   return {
-//     type: 'ADD_USER',
-//     user
-//   };
-// };
-
 export const getUsers = () => {
   return (dispatch) => {
     dispatch({ type: "LOADING" });
@@ -31,3 +24,12 @@ export const addUser = (user, history) => {
       });
   };
 };
+
+
+
+// export const addUser = (user) => {
+//   return {
+//     type: 'ADD_USER',
+//     user
+//   };
+// };

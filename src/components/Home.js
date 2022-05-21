@@ -12,7 +12,8 @@ export class Home extends Component {
             <li>Save your round.</li>
             <li>Call me if you win. LOL &#128176;</li>
           </ol>
-          <Link to="/users/new" className="">Users</Link>
+          <Link to="/users/new" className="">New User</Link>
+          <Link to="/rounds/new" className="">New Round</Link>
       </div>
     );
   }

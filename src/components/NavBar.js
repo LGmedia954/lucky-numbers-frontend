@@ -9,11 +9,11 @@ export class Navbar extends Component {
 
         <Link to="/users/new" className="ui inverted yellow button">New User</Link>
 
-        <Link to="/users" className="ui inverted yellow button">Users</Link>
+        <Link to="/users/index" className="ui inverted yellow button">Users</Link>
 
         <Link to="/rounds/new" className="ui inverted yellow button">New Round</Link>
 
-        <Link to="/rounds" className="ui inverted yellow button">Rounds</Link>
+        <Link to="/rounds/index" className="ui inverted yellow button">Rounds</Link>
       </div>
     );
   }
