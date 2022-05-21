@@ -5,7 +5,7 @@ export class Home extends Component {
   render() {
     return (
       <div className="viewable">
-        <h1 className="h1">Lucky Numbers</h1>
+        <h1>Lucky Numbers</h1>
           <ol>
             <li>Enter the name of your lottery.</li>
             <li>Pick up to 6 numbers.</li>

@@ -1,5 +1,6 @@
-import React from 'react';
-import { render } from 'react-dom';
+// import React from 'react';
+// import { render } from 'react-dom';
+import React, { Component } from "react";
 
 class Picker extends React.Component {
   
@@ -18,9 +19,9 @@ class Picker extends React.Component {
 
   render() {
     return (
-      <div className="row">
-      <h3 className="text-center">Lucky Number Generator</h3><br /><br />
-      <button className="btn btn-primary" onClick={this.handleClick.bind(this)}>Click</button>
+      <div className="">
+      <h3>Lucky Number Generator</h3><br /><br />
+      <button className="ui inverted yellow button" onClick={this.handleClick.bind(this)}>Click</button>
         <div className="card" style={{marginTop:"10px"}}>
           <div className="card-block">
             The number is: {this.state.random}

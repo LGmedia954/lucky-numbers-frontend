@@ -16,7 +16,7 @@ export class UserForm extends Component {
     });
   }
 
-  handleOnLocationChange = event => {
+  handleOnEmailChange = event => {
     this.setState({
       location: event.target.value
     });
@@ -41,7 +41,7 @@ export class UserForm extends Component {
         <p>
           <input className="ui small input"
             type="text"
-            onChange={(event) => this.handleOnLocationChange(event)}
+            onChange={(event) => this.handleOnEmailChange(event)}
             id="username"
             placeholder="Username" />
         </p>
@@ -61,3 +61,7 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(null, mapDispatchToProps)(UserForm);
+
+// Alternative form:
+
+// export default connect(null, { addUser })(UserForm);
