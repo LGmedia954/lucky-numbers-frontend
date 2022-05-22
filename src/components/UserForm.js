@@ -12,13 +12,13 @@ export class UserForm extends Component {
 
   handleOnNameChange = event => {
     this.setState({
-      name: event.target.value
+      email: event.target.value
     });
   }
 
   handleOnEmailChange = event => {
     this.setState({
-      location: event.target.value
+      username: event.target.value
     });
   }
 

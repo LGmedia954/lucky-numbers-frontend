@@ -3,7 +3,7 @@ const initialState = {
   loading: true,
 };
 
-const roundsReducer = (state = initialState, action) => {
+const rounds = (state = initialState, action) => {
   switch (action.type) {
     case "LOADING":
       return {
@@ -26,7 +26,7 @@ const roundsReducer = (state = initialState, action) => {
   }
 };
     
-export default roundsReducer;
+export default rounds;
 
 
 

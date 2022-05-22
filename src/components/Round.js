@@ -6,15 +6,15 @@ export class Round extends Component {
     return (
       <div className="viewable">
         <h2>Lucky Picks!</h2>
-        <table className="">
+        <table className="ui celled table">
           <tr>
-            <td>{title}</td>
-            <td>{pick_one}</td>
-            <td>{pick_two}</td>
-            <td>{pick_three}</td>
-            <td>{pick_four}</td>
-            <td>{pick_five}</td>
-            <td>{pick_six}</td>
+            <td data-label>{title}</td>
+            <td data-label>{pick_one}</td>
+            <td data-label>{pick_two}</td>
+            <td data-label>{pick_three}</td>
+            <td data-label>{pick_four}</td>
+            <td data-label>{pick_five}</td>
+            <td data-label>{pick_six}</td>
           </tr>
         </table>
       </div>

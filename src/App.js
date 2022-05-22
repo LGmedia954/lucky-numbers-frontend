@@ -1,15 +1,16 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Routes, Route } from "react-router-dom";
 import { getUsers } from "./actions/users";
 import { getRounds } from "./actions/rounds";
-import Home from "./components/Home";
 import NavBar from "./components/NavBar";
+import Home from "./components/Home";
 import UserForm from "./components/UserForm";
 import UsersContainer from "./components/UsersContainer";
 import NewGameContainer from "./components/NewGameContainer";
 import RoundsContainer from "./components/RoundsContainer";
 import Footer from "./components/Footer";
+import './index.css'
 
 
 class App extends React.Component {
@@ -26,11 +27,11 @@ class App extends React.Component {
       <Router>
       <NavBar />
         <Routes>
-          <Route path="/" element={Home} />
-          <Route path="/users/create" element={<UserForm />} />
-          <Route path="/users/index" element={<UsersContainer />} />
-          <Route path="/rounds/new" element={<NewGameContainer />} />     
-          <Route path="/rounds/index" element={<RoundsContainer />} />
+          <Route exact path="/" element={Home} />
+          <Route path="/users/new" element={<UserForm />} />
+          <Route path="/users" element={<UsersContainer />} />
+          <Route path="/rounds/new" element={<NewGameContainer />} />
+          <Route path="/rounds" element={<RoundsContainer />} />
         </Routes>
         <Footer />
       </Router>
