@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { BrowserRouter as Router, Switch, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { getUsers } from "./actions/users";
 import { getRounds } from "./actions/rounds";
 import NavBar from "./components/NavBar";
@@ -24,17 +24,17 @@ class App extends React.Component {
     }
 
     return (
-      <Router>
-      <NavBar />
+      <div className="App">
+        <NavBar/>
         <Routes>
-          <Route exact path="/" element={Home} />
+          <Route path="/" element={<Home />} />
           <Route path="/users/new" element={<UserForm />} />
           <Route path="/users" element={<UsersContainer />} />
           <Route path="/rounds/new" element={<NewGameContainer />} />
           <Route path="/rounds" element={<RoundsContainer />} />
         </Routes>
-        <Footer />
-      </Router>
+        <Footer/>
+       </div>
     );
   }
 }

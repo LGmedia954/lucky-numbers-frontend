@@ -26,7 +26,7 @@ export class Picker extends Component {
       <h2>Lucky Number Generator</h2>
         <div id='pick'>
           <h1>{this.state.random}</h1>
-        </div><br />
+        </div>
       <button className="ui inverted yellow button" onClick={this.handleClick.bind(this)}>Click</button>
         <br /><br />
       </div>

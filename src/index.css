@@ -1,8 +1,10 @@
 body {
+  margin: 0;
   background-image: url("https://lg-mediagroup.com/deepblueglitter.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
+  /* background-size: cover; */
+  background-size: 100% 100%;
   z-index: -100 !important;
 }
 
@@ -26,21 +28,22 @@ h1 {
   font-family: 'Luckiest Guy', cursive;
   color: #FFD700;
   font-size: 50px;
-  /* text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.2); */
 }
 
 h2 {
   font-family: 'Luckiest Guy', cursive;
   color: #FFD700;
   font-size: 24px;
-  /* text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.2); */
 }
 
 h3 {
   font-family: 'Luckiest Guy', cursive;
   color: #FFD700;
   font-size: 18px;
-  /* text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.2); */
+}
+
+.loot {
+  font-size: 75px;
 }
 
 .viewable {

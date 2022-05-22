@@ -33,7 +33,7 @@ export class RoundForm extends Component {
     return (
       <div>
         <h2>Save Your Round!</h2>
-        <form class="ui small form" onSubmit={this.handleSubmit}>
+        <form className="ui tiny form" onSubmit={this.handleSubmit}>
           <div>
             <input className="ui small input"
               type="text" name="title" id="title" placeholder="Game Title"
