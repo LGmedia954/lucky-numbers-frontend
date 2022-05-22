@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { getUsers } from "./actions/users";
 import { getRounds } from "./actions/rounds";
 import Home from "./components/Home";
+import NavBar from "./components/NavBar";
 import UserForm from "./components/UserForm";
 import UsersContainer from "./components/UsersContainer";
 import NewGameContainer from "./components/NewGameContainer";
 import RoundsContainer from "./components/RoundsContainer";
-import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 
 
@@ -18,8 +18,11 @@ class App extends React.Component {
     this.props.getRounds();
   }
   render() {
+    if (this.props.loading) {
+      return <h3>Loading Users and Rounds...</h3>;
+    }
+
     return (
-     <div className="App">
       <Router>
       <NavBar />
         <Routes>
@@ -31,7 +34,6 @@ class App extends React.Component {
         </Routes>
         <Footer />
       </Router>
-      </div>
     );
   }
 }

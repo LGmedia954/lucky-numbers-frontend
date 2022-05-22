@@ -1,9 +1,15 @@
 const initialState = {
-  users: []
+  users: [],
+  loading: true,
 };
 
 const users = (state = initialState, action) => {
   switch (action.type) {
+    case "LOADING":
+      return {
+        ...state,
+        loading: true,
+      };
     case "SET_USERS":
       return {
         ...state, 

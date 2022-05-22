@@ -30,6 +30,7 @@ export class UserForm extends Component {
   render() {
     return(
       <div className="viewable">
+      <h2>SIGN IN</h2>
       <form className="ui small form" onSubmit={(event) => this.handleOnSubmit(event)}>
         <p>
           <input className="ui small input"

@@ -9,6 +9,7 @@ class Rounds extends Component {
 
     return (
       <div className="viewable">
+      <h2>ROUNDS</h2>
         <ul>
           {rounds}
         </ul>
