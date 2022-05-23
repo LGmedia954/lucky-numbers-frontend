@@ -5,13 +5,11 @@ body {
   background-attachment: fixed;
   /* background-size: cover; */
   background-size: 100% 100%;
-  z-index: -100 !important;
 }
 
 .App {
   text-align: center;
   position: relative;
-  z-index: 100 !important;
 }
 
 .nav {
@@ -21,7 +19,7 @@ body {
   position: fixed;
   width: 100%;
   background-color: #0e0e3f;
-  z-index: 110 !important;
+  z-index: 100 !important;
 }
 
 h1 {

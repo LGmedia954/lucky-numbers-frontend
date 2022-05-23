@@ -27,11 +27,11 @@ class App extends React.Component {
       <div className="App">
         <NavBar/>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/users/new" element={<UserForm />} />
-          <Route path="/users" element={<UsersContainer />} />
-          <Route path="/rounds/new" element={<NewGameContainer />} />
-          <Route path="/rounds" element={<RoundsContainer />} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/users/new" element={<UserForm/>} />
+          <Route path="/users" element={<UsersContainer/>} />
+          <Route path="/rounds/new" element={<NewGameContainer/>} />
+          <Route path="/rounds" element={<RoundsContainer/>} />
         </Routes>
         <Footer/>
        </div>
