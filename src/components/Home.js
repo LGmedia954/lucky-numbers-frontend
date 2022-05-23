@@ -10,7 +10,7 @@ export class Home extends Component {
         <h3>1. Enter the name of your lottery.</h3>
         <h3>2. Pick up to 6 numbers.</h3>
         <h3>3. Save your round.</h3>
-        <h3>4. Call me if you win.</h3>
+        <h3>4. Call me if you win.</h3><br />
         <p className="loot">&#128176;</p>
       </div>
     );
