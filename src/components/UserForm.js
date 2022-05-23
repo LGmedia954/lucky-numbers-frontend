@@ -34,17 +34,15 @@ export class UserForm extends Component {
       <form className="ui small form" onSubmit={(event) => this.handleOnSubmit(event)}>
         <p>
           <input className="ui small input"
-            type="text"
+            type="text" name="email" id="email" placeholder="Email"
             onChange={(event) => this.handleOnNameChange(event)}
-            id="email"
-            placeholder="Email" />
+             />
         </p>
         <p>
           <input className="ui small input"
-            type="text"
+            type="text" name="username" id="username" placeholder="Username"
             onChange={(event) => this.handleOnEmailChange(event)}
-            id="username"
-            placeholder="Username" />
+            />      
         </p>
         <input type="submit" className="ui inverted yellow button" />
       </form>

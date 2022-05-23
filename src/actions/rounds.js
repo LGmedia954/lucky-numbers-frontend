@@ -1,7 +1,13 @@
 export const getRounds = () => {
   return (dispatch) => {
     dispatch({ type: "LOADING" });
-    fetch("http://localhost:3000/rounds")
+    fetch("http://localhost:3000/api/v1/rounds", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
       .then((resp) => resp.json())
       .then((rounds) => dispatch({ type: "SET_ROUNDS", rounds }));
   };
@@ -9,7 +15,7 @@ export const getRounds = () => {
 
 export const addRound = (round, history) => {
   return (dispatch) => {
-    fetch("http://localhost:3000/rounds", {
+    fetch("http://localhost:3000/api/v1/rounds", {
       method: "POST",
       headers: {
         Accept: "application/json",

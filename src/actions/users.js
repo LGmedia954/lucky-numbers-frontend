@@ -1,7 +1,13 @@
 export const getUsers = () => {
   return (dispatch) => {
     dispatch({ type: "LOADING" });
-    fetch("http://localhost:3000/users")
+    fetch("http://localhost:3000/api/v1/users", {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
       .then((resp) => resp.json())
       .then((users) => dispatch({ type: "SET_USERS", users }));
   };
@@ -9,7 +15,7 @@ export const getUsers = () => {
 
 export const addUser = (user, history) => {
   return (dispatch) => {
-    fetch("http://localhost:3000/users", {
+    fetch("http://localhost:3000/api/v1/users", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -24,6 +30,17 @@ export const addUser = (user, history) => {
       });
   };
 };
+
+
+
+// export const getUsers = () => {
+//   return (dispatch) => {
+//     dispatch({ type: "LOADING" });
+//     fetch("http://localhost:3000/users")
+//       .then((resp) => resp.json())
+//       .then((users) => dispatch({ type: "SET_USERS", users }));
+//   };
+// };
 
 
 

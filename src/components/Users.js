@@ -9,6 +9,7 @@ class Users extends Component {
 
     return (
       <div className="viewable">
+      <h2>USERS</h2>
         <ul>
           {users}
         </ul>
