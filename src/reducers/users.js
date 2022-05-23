@@ -12,7 +12,8 @@ const users = (state = initialState, action) => {
       };
     case "SET_USERS":
       return {
-        ...state, 
+        ...state,
+        loading: false,
         users: action.users,
       };
     case "ADD_USER":

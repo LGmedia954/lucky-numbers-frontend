@@ -13,6 +13,7 @@ const rounds = (state = initialState, action) => {
     case "SET_ROUNDS":
       return {
         ...state,
+        loading: false,
         rounds: action.rounds
       };
     case "ADD_ROUND":

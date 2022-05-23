@@ -19,7 +19,7 @@ body {
   position: fixed;
   width: 100%;
   background-color: #0e0e3f;
-  z-index: 100 !important;
+  z-index: 777 !important;
 }
 
 h1 {
