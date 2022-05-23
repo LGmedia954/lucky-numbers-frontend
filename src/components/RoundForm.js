@@ -11,6 +11,7 @@ export class RoundForm extends Component {
     pick_four: "",
     pick_five: "",
     pick_six: "",
+    user_id: "",
   };
 
   handleChange = (e) => {
@@ -22,6 +23,7 @@ export class RoundForm extends Component {
       [e.target.pick_four]: e.target.value,
       [e.target.pick_five]: e.target.value,
       [e.target.pick_six]: e.target.value,
+      [e.target.user_id]: e.target.value,
     });
   };
 
@@ -76,7 +78,9 @@ export class RoundForm extends Component {
               value={this.state.pick_six}
               onChange={this.handleChange}/>
           </div><br />
-          <input type="hidden" id="user_id"></input>
+            <input type="hidden" name="user_id" id="user_id" 
+            value={this.state.user_id} onChange={this.handleChange}/>
+
           <input type="submit" className="ui inverted yellow button" />
         </form>
       </div>

@@ -31,6 +31,21 @@ export const addUser = (user, history) => {
   };
 };
 
+export const findUser = (userId) => {
+  return (dispatch) => {
+    dispatch({ type: "LOADING" });
+    fetch(`http://localhost:3000/api/v1/users/${userId}`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((user) => dispatch({ type: "FIND_USER", user }));
+  };
+};
+
 
 
 // export const getUsers = () => {

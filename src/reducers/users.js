@@ -21,6 +21,11 @@ const users = (state = initialState, action) => {
         ...state,
         users: [...state.users, action.user]
       };
+    case "FIND_USER":
+      return {
+        ...state,
+        users: [...state.users, action.user]
+      };
 
     default:
       return state;
