@@ -5,7 +5,7 @@ class Users extends Component {
 
   render() {
 
-    let users = this.props.users.map((user, id) => <li key={id}>{user.username}</li>);
+  let users = this.state.users.map(user => <li key={user.id}>{user.username}</li>);
 
     return (
       <div className="viewable">
@@ -23,3 +23,8 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(Users);
+
+
+
+// let users = this.props.users.map((user, index) => <li key={index}>{user.username}</li>);
+// let users = this.props.users.map(user => <li key={user.id}>{user.username}</li>);

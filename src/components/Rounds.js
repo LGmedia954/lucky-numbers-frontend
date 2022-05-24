@@ -6,7 +6,7 @@ class Rounds extends Component {
   render() {
 
     let rounds = this.props.rounds.map((round, index) => <li key={index}>{round.title}</li>);
-
+  
     return (
       <div className="viewable">
       <h2>ROUNDS</h2>

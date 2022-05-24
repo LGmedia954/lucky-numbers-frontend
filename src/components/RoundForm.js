@@ -31,6 +31,7 @@ export class RoundForm extends Component {
     e.preventDefault();
     this.props.addRound(this.state, this.props.history);
   };
+
   render() {
     return (
       <div>
@@ -89,3 +90,23 @@ export class RoundForm extends Component {
 }
 
 export default connect(null, { addRound })(RoundForm);
+
+
+
+
+
+// handleOnSubmit = event => {
+//   event.preventDefault();
+//   const round = {...this.state, id: uuid() };
+//   this.props.addRound(round);
+//   this.setState({
+  //      title: "",
+  //      pick_one: "",
+  //      pick_two: "",
+  //      pick_three: "",
+  //      pick_four: "",
+  //      pick_five: "",
+  //      pick_six: "",
+  //      user_id: "",
+  //   });
+  // }

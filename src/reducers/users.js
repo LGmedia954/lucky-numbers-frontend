@@ -22,6 +22,7 @@ const users = (state = initialState, action) => {
         users: [...state.users, action.user]
       };
     case "FIND_USER":
+      state.findIndex(user => user.id === action.id);
       return {
         ...state,
         users: [...state.users, action.user]
