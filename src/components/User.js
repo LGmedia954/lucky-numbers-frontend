@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Round from './Round';
 
 export class User extends Component {
   render() {
@@ -9,9 +8,6 @@ export class User extends Component {
         <h2>Good Luck {username}!</h2>
         <br /><br />
         <p className="loot">&#128176;</p>
-        <div>
-          <Round />
-        </div>
       </div>      
     );
   }

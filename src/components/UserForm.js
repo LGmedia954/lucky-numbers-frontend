@@ -24,7 +24,7 @@ export class UserForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addUser(this.state);
+    this.props.addUser(this.state, this.props.history);
   }
 
   render() {
@@ -35,17 +35,19 @@ export class UserForm extends Component {
         <p>
           <input className="ui small input"
             type="text" name="email" id="email" placeholder="Email"
+            value={this.state.email}
             onChange={(event) => this.handleOnNameChange(event)}
              />
         </p>
         <p>
           <input className="ui small input"
             type="text" name="username" id="username" placeholder="Username"
+            value={this.state.username}
             onChange={(event) => this.handleOnEmailChange(event)}
             />      
         </p>
         <input type="submit" className="ui inverted yellow button" />
-      </form>
+       </form>
       </div>
     );
   }
@@ -53,8 +55,8 @@ export class UserForm extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addUser: (newUser) => {
-      dispatch(addUser(newUser))
+    addUser: (user) => {
+      dispatch(addUser(user))
     }
   };
 };

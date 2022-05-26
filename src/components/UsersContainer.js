@@ -1,12 +1,38 @@
-import React from 'react'
+import React, { Component } from 'react'
+import UserForm from '../components/UserForm';
 import Users from './Users';
+import { connect } from 'react-redux'
 
-const UsersContainer = () => {
-  return (
-    <div className="viewable">
-      <Users />
-    </div>
-  )
+class UsersContainer extends Component {
+  render() {
+    return (
+      <div className="viewable">
+        <UserForm addUser={this.props.addUser}/>
+        <Users users={this.props.users}/>
+      </div>
+    )
+  }
 }
 
-export default UsersContainer;
+const mapStateToProps = ({ users }) => ({ users })
+
+const mapDispatchToProps = dispatch => ({ addUser: user => dispatch({ type: "ADD_USER", user }) })
+
+export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
+
+
+
+
+
+// import React from 'react'
+// import Users from './Users';
+
+// const UsersContainer = () => {
+//   return (
+//     <div className="viewable">
+//       <Users />
+//     </div>
+//   )
+// }
+
+// export default UsersContainer;
