@@ -4,26 +4,26 @@ import { addRound } from "../actions/rounds";
 
 export class RoundForm extends Component {
   state = {
-    title: "",
-    pick_one: "",
-    pick_two: "",
-    pick_three: "",
-    pick_four: "",
-    pick_five: "",
-    pick_six: "",
-    user_id: "",
+    title: '',
+    pick_one: '',
+    pick_two: '',
+    pick_three: '',
+    pick_four: '',
+    pick_five: '',
+    pick_six: '',
+    user_id: ''
   };
 
   handleChange = (e) => {
     this.setState({
-      [e.target.title]: e.target.value,
-      [e.target.pick_one]: e.target.value,
-      [e.target.pick_two]: e.target.value,
-      [e.target.pick_three]: e.target.value,
-      [e.target.pick_four]: e.target.value,
-      [e.target.pick_five]: e.target.value,
-      [e.target.pick_six]: e.target.value,
-      [e.target.user_id]: e.target.value,
+      title: e.target.value,
+      pick_one: e.target.value,
+      pick_two: e.target.value,
+      pick_three: e.target.value,
+      pick_four: e.target.value,
+      pick_five: e.target.value,
+      pick_six: e.target.value,
+      user_id: e.target.value,
     });
   };
 
@@ -89,7 +89,23 @@ export class RoundForm extends Component {
   }
 }
 
-export default connect(null, { addRound })(RoundForm);
+const mapDispatchToProps = dispatch => {
+  return {
+    addRound: (round) => {
+      dispatch(addRound(round))
+      
+      let newRound = { ...round };
+      newRound.ids = newRound.ids.split(',');
+      const newArr = this.state.users.concat(newRound);
+      
+      this.setState({
+        users: newArr,
+      });
+    }
+  }
+};
+
+export default connect(null, mapDispatchToProps)(RoundForm);
 
 
 
