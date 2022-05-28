@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import UserForm from '../components/UserForm';
 import Users from './Users';
 import { connect } from 'react-redux'
 
@@ -7,7 +6,6 @@ class UsersContainer extends Component {
   render() {
     return (
       <div className="viewable">
-        <UserForm addUser={this.props.addUser}/>
         <Users users={this.props.users}/>
       </div>
     )

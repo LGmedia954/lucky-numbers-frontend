@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addUser } from '../actions/users';
-
-
 export class UserForm extends Component {
 
   state = {
@@ -57,8 +55,16 @@ const mapDispatchToProps = dispatch => {
   return {
     addUser: (user) => {
       dispatch(addUser(user))
+      
+      let newUser = { ...user };
+      newUser.ids = newUser.ids.split(',');
+      const newArr = this.state.users.concat(newUser);
+      
+      this.setState({
+        users: newArr,
+      });
     }
-  };
+  }
 };
 
 export default connect(null, mapDispatchToProps)(UserForm);

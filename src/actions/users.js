@@ -1,4 +1,5 @@
 export const getUsers = () => {
+  console.log("check")
   return (dispatch) => {
     dispatch({ type: "LOADING" });
     fetch("http://localhost:3000/api/v1/users", {
@@ -9,7 +10,10 @@ export const getUsers = () => {
       },
     })
       .then((resp) => resp.json())
-      .then((users) => dispatch({ type: "SET_USERS", users }));
+      .then((users) => {
+        console.log(users)
+        dispatch({ type: "SET_USERS", users })
+      });
   };
 };
 

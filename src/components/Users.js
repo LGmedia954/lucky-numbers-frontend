@@ -2,17 +2,17 @@ import React from 'react';
 
 const Users = props => {
 
-  // const users = Array.from(props.users);
-  const users = props.users.map((user, index) => {
+  const users = props.users.users.map((user, index) => {
     return <li key={index}>{user.username}</li>;
   });
   
   return (
     <div className="viewable">
-    <h2>USERS</h2>
-      <ul>
-        {users}
-      </ul>
+      <h2>
+        <div>
+          <h2>{users}</h2>
+        </div>
+      </h2>
     </div>
   );
 };
