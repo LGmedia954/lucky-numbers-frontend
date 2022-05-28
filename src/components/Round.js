@@ -6,7 +6,7 @@ export class Round extends Component {
     return (
       <div className="viewable">
         <h2>Lucky Picks!</h2>
-        <table className="ui celled table">
+        <h3><table className="ui celled table">
           <tr>
             <td data-label>{title}</td>
             <td data-label>{pick_one}</td>
@@ -16,7 +16,7 @@ export class Round extends Component {
             <td data-label>{pick_five}</td>
             <td data-label>{pick_six}</td>
           </tr>
-        </table>
+        </table></h3>
       </div>
     );
   }

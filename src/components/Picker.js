@@ -16,7 +16,7 @@ export class Picker extends Component {
     const max = Math.floor(70);
     const rand = Math.floor(Math.random() * (max - min) + min);
     // this.setState({ random: this.state.random + rand });
-    // the above line was giving me an added tally
+    // the above line gave me an added tally
     this.setState({ random: rand });
   }
 

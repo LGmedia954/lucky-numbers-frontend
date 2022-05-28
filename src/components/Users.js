@@ -8,11 +8,9 @@ const Users = props => {
   
   return (
     <div className="viewable">
-      <h2>
-        <div>
-          <h2>{users}</h2>
-        </div>
-      </h2>
+      <div>
+        <h2>{users}</h2>
+      </div>
     </div>
   );
 };
