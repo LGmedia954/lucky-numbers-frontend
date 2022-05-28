@@ -14,6 +14,8 @@ function NavBar() {
       <Link to="/rounds/new" className="ui inverted yellow button">New Round</Link>
 
       <Link to="/rounds" className="ui inverted yellow button">Rounds</Link>
+
+      <Link to="/rounds/show" className="ui inverted yellow button">Your Numbers</Link>
     </div>
   );
 }

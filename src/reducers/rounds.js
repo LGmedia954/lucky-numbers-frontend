@@ -1,3 +1,5 @@
+import uuid from "uuid"; 
+
 const initialState = {
   rounds: [],
   loading: true,
@@ -17,9 +19,18 @@ const rounds = (state = initialState, action) => {
         rounds: action.rounds
       };
     case "ADD_ROUND":
+      state.filter(
+        user => user.id === action.round.user_id
+      );
       return {
         ...state,
-        rounds: [...state.rounds, action.round],
+        rounds: [...state.rounds, action.round]
+      };
+    case "FIND_USER_ROUND":
+      state.findIndex(round => round.id === action.id);
+      return {
+        ...state,
+        rounds: [...state.rounds, action.round]
       };
 
     default:
@@ -47,5 +58,13 @@ export default rounds;
 
 //   }
 // };
+
+
+
+// case "ADD_ROUND":
+//   return {
+//     ...state,
+//     rounds: [...state.rounds, action.round],
+//   };
 
 

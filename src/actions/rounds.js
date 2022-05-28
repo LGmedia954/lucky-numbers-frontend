@@ -36,6 +36,25 @@ export const addRound = (round, history) => {
   };
 };
 
+export const findUserRound = (userId) => {
+  console.log("user round search")
+  return (dispatch) => {
+    dispatch({ type: "LOADING" });
+    fetch(`http://localhost:3000/api/v1/users/${userId}/rounds/${id}`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((round) => {
+        console.log(round)
+        dispatch({ type: "FIND_USER_ROUND", round });
+      });
+  };
+};
+
 
 
 // export const addRound = (round) => {

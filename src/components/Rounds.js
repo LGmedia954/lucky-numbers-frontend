@@ -3,10 +3,10 @@ import React from 'react';
 const Rounds = props => {
   
   const rounds = props.rounds.rounds.map((round, index) => {
-    return <li key={index}>{round.title}
-    {round.pick_one}{round.pick_two}{round.pick_three}
-    {round.pick_four}{round.pick_five}{round.pick_six}</li>;
-   });
+    return <li key={index}>{round.title} &nbsp;&nbsp;
+    {round.pick_one}, &nbsp;&nbsp;{round.pick_two}, &nbsp;&nbsp;{round.pick_three}, &nbsp;&nbsp;
+    {round.pick_four}, &nbsp;&nbsp;{round.pick_five}, &nbsp;&nbsp;{round.pick_six}</li>;
+  });
 
   return (
     <div className="viewable">

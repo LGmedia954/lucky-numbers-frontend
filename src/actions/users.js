@@ -36,10 +36,11 @@ export const addUser = (user, history) => {
   };
 };
 
-export const findUser = (userId) => {
+export const findUser = (id) => {
+  console.log("user search")
   return (dispatch) => {
     dispatch({ type: "LOADING" });
-    fetch(`http://localhost:3000/api/v1/users/${userId}`, {
+    fetch(`http://localhost:3000/api/v1/users/${id}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -48,7 +49,7 @@ export const findUser = (userId) => {
     })
       .then((resp) => resp.json())
       .then((user) => {
-        console.log("user search")
+        console.log(user)
         dispatch({ type: "FIND_USER", user });
       });
   };
