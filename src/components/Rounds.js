@@ -4,7 +4,8 @@ const Rounds = props => {
   
   const rounds = props.rounds.rounds.map((round, index) => {
     return <li key={index}>{round.title}
-    {round.pick_one}{round.pick_two}{round.pick_three}{round.pick_four}{round.pick_five}{round.pick_six}</li>;
+    {round.pick_one}{round.pick_two}{round.pick_three}
+    {round.pick_four}{round.pick_five}{round.pick_six}</li>;
    });
 
   return (

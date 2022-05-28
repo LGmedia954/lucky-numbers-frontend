@@ -1,5 +1,5 @@
 export const getUsers = () => {
-  console.log("check")
+  console.log("users checkpoint")
   return (dispatch) => {
     dispatch({ type: "LOADING" });
     fetch("http://localhost:3000/api/v1/users", {
@@ -29,6 +29,7 @@ export const addUser = (user, history) => {
     })
       .then((resp) => resp.json())
       .then((user) => {
+        console.log("user added")
         dispatch({ type: "ADD_USER", user });
         history.push("/users");
       });
@@ -46,20 +47,12 @@ export const findUser = (userId) => {
       },
     })
       .then((resp) => resp.json())
-      .then((user) => dispatch({ type: "FIND_USER", user }));
+      .then((user) => {
+        console.log("user search")
+        dispatch({ type: "FIND_USER", user });
+      });
   };
 };
-
-
-
-// export const getUsers = () => {
-//   return (dispatch) => {
-//     dispatch({ type: "LOADING" });
-//     fetch("http://localhost:3000/users")
-//       .then((resp) => resp.json())
-//       .then((users) => dispatch({ type: "SET_USERS", users }));
-//   };
-// };
 
 
 

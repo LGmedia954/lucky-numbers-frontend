@@ -1,4 +1,5 @@
 export const getRounds = () => {
+  console.log("rounds checkpoint")
   return (dispatch) => {
     dispatch({ type: "LOADING" });
     fetch("http://localhost:3000/api/v1/rounds", {
@@ -8,8 +9,11 @@ export const getRounds = () => {
         "Content-Type": "application/json",
       },
     })
-      .then((resp) => resp.json())
-      .then((rounds) => dispatch({ type: "SET_ROUNDS", rounds }));
+    .then((resp) => resp.json())
+      .then((rounds) => {
+        console.log(rounds)
+        dispatch({ type: "SET_ROUNDS", rounds })
+      });
   };
 };
 
@@ -25,6 +29,7 @@ export const addRound = (round, history) => {
     })
       .then((resp) => resp.json())
       .then((round) => {
+        console.log("round added")
         dispatch({ type: "ADD_ROUND", round });
         history.push("/rounds");
       });
