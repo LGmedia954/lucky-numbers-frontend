@@ -14,21 +14,56 @@ export class RoundForm extends Component {
     user_id: ''
   };
 
-  handleChange = (e) => {
+  handleTitleChange = event => {
     this.setState({
-      title: e.target.value,
-      pick_one: e.target.value,
-      pick_two: e.target.value,
-      pick_three: e.target.value,
-      pick_four: e.target.value,
-      pick_five: e.target.value,
-      pick_six: e.target.value,
-      user_id: e.target.value,
+      title: event.target.value
+    });
+  }
+
+  handleNumOneChange = event => {
+    this.setState({
+      pick_one: event.target.value,
     });
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
+  handleNumTwoChange = event => {
+    this.setState({
+      pick_two: event.target.value,
+    });
+  };
+
+  handleNumThreeChange = event => {
+    this.setState({
+      pick_three: event.target.value,
+    });
+  };
+
+  handleNumFourChange = event => {
+    this.setState({
+      pick_four: event.target.value,
+    });
+  };
+
+  handleNumFiveChange = event => {
+    this.setState({
+      pick_five: event.target.value,
+    });
+  };
+
+  handleNumSixChange = event => {
+    this.setState({
+      pick_six: event.target.value,
+    });
+  };
+
+  handleUserId = event => {
+    this.setState({
+      user_id: event.target.value,
+    });
+  };
+
+  handleOnSubmit = event => {
+    event.preventDefault();
     this.props.addRound(this.state, this.props.history);
   };
 
@@ -41,46 +76,46 @@ export class RoundForm extends Component {
             <input className="ui small input"
               type="text" name="title" id="title" placeholder="Game Title"
               value={this.state.title}
-              onChange={this.handleChange}/>
+              onChange={this.handleTitleChange}/>
           </div><br />
           <div>
             <input className="ui small input"
-              type="number" name="pick_one" id="pick_one" placeholder="Pick 1"
+              type="text" name="pick_one" id="pick_one" placeholder="Pick 1"
               value={this.state.pick_one}
-              onChange={this.handleChange}/>
+              onChange={this.handleNumOneChange}/>
           </div><br />
           <div>
             <input className="ui small input"
-              type="number" name="pick_two" id="pick_two" placeholder="Pick 2"
+              type="text" name="pick_two" id="pick_two" placeholder="Pick 2"
               value={this.state.pick_two}
-              onChange={this.handleChange}/>
+              onChange={this.handleNumTwoChange}/>
           </div><br />
           <div>
             <input className="ui small input"
-              type="number" name="pick_three" id="pick_three" placeholder="Pick 3"
+              type="text" name="pick_three" id="pick_three" placeholder="Pick 3"
               value={this.state.pick_three}
-              onChange={this.handleChange}/>
+              onChange={this.handleNumThreeChange}/>
           </div><br />
           <div>
             <input className="ui small input"
-              type="number" name="pick_four" id="pick_four" placeholder="Pick 4"
+              type="text" name="pick_four" id="pick_four" placeholder="Pick 4"
               value={this.state.pick_four}
-              onChange={this.handleChange}/>
+              onChange={this.handleNumFourChange}/>
           </div><br />
           <div>
             <input className="ui small input"
-              type="number" name="pick_five" id="pick_five" placeholder="Pick 5"
+              type="text" name="pick_five" id="pick_five" placeholder="Pick 5"
               value={this.state.pick_five}
-              onChange={this.handleChange}/>
+              onChange={this.handleNumFiveChange}/>
           </div><br />
           <div>
             <input className="ui small input"
-              type="number" name="pick_six" id="pick_six" placeholder="Pick 6"
+              type="text" name="pick_six" id="pick_six" placeholder="Pick 6"
               value={this.state.pick_six}
-              onChange={this.handleChange}/>
+              onChange={this.handleNumSixChange}/>
           </div><br />
             <input type="hidden" name="user_id" id="user_id" 
-            value={this.state.user_id} onChange={this.handleChange}/>
+            value={this.state.user_id} onChange={this.handleUserId}/>
 
           <input type="submit" className="ui inverted yellow button" />
         </form>
