@@ -22,18 +22,28 @@ const rounds = (state = initialState, action) => {
       return {
         ...state,
         rounds: [...state.rounds, 
-        {
-          user: state.userId,
-          round: action.round
-        },
-      ],
-    }
+          {
+            user: state.userId,
+            round: action.round
+          },
+        ],
+      }
     case "FIND_USER_ROUND":
       state.lastIndexOf(round => round.id === action.id);
       return {
         ...state,
         rounds: [...state.rounds, action.round, uuidv4()]
       };
+    case "GET_USER_ROUNDS":
+      return {
+        ...state,
+        rounds: [...state.rounds, 
+          {
+            users: state.userIds,
+            rounds: action.rounds
+          },
+        ],
+      }
 
     default:
       return state;

@@ -26,6 +26,7 @@ export class UserForm extends Component {
     event.preventDefault();
     const user = {...this.state, id: uuidv4() };
     this.props.addUser(user);
+    // clear form
     this.setState({
       email: '',
       username: ''
@@ -63,13 +64,13 @@ const mapDispatchToProps = dispatch => {
     addUser: (user) => {
       dispatch(addUser(user))
       
-      let newUser = { ...user };
-      newUser.ids = newUser.ids.split(',');
-      const newArr = this.state.users.concat(newUser);
+      // let newUser = { ...user };
+      // newUser.ids = newUser.ids.split(',');
+      // const newArr = this.state.users.concat(newUser);
       
-      this.setState({
-        users: newArr,
-      });
+      // this.setState({
+      //   users: newArr,
+      // });
     }
   }
 };

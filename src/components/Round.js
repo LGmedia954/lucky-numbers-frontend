@@ -5,8 +5,7 @@ export class Round extends Component {
     const { title, pick_one, pick_two, pick_three, pick_four, pick_five, pick_six } = this.props;
     return (
       <div className="viewable">
-        <h2>Your Lucky Picks!</h2>
-        <h3>
+        <h2>
           {title} &nbsp;&nbsp;
           {pick_one} &bull;&nbsp;&nbsp;
           {pick_two} &bull;&nbsp;&nbsp;
@@ -14,7 +13,7 @@ export class Round extends Component {
           {pick_four} &bull;&nbsp;&nbsp;
           {pick_five} &bull;&nbsp;&nbsp;
           {pick_six}
-        </h3>
+        </h2>
       </div>
     );
   }

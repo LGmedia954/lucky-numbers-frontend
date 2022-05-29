@@ -1,5 +1,5 @@
 export const getUsers = () => {
-  console.log("users checkpoint")
+  console.log("users check")
   return (dispatch) => {
     dispatch({ type: "LOADING" });
     fetch("http://localhost:3000/api/v1/users", {
@@ -29,16 +29,14 @@ export const addUser = (user) => {
     })
       .then((resp) => resp.json())
       .then((user) => {
-        console.log("user added")
+        console.log(user)
         dispatch({ type: "ADD_USER", user });
       });
   };
 };
 
 export const findUser = (id) => {
-  console.log("user search")
   return (dispatch) => {
-    dispatch({ type: "LOADING" });
     fetch(`http://localhost:3000/api/v1/users/${id}`, {
       method: "GET",
       headers: {

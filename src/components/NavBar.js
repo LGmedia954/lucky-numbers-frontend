@@ -7,7 +7,7 @@ function NavBar() {
     <div className="nav">
       <Link to="/" className="ui inverted yellow button">Home</Link>
 
-      <Link to="/users/new" className="ui inverted yellow button">New User</Link>
+      <Link to="/users/new" className="ui inverted yellow button">Sign In</Link>
 
       <Link to="/users" className="ui inverted yellow button">Users</Link>
 

@@ -1,5 +1,5 @@
 export const getRounds = () => {
-  console.log("rounds checkpoint")
+  console.log("rounds check")
   return (dispatch) => {
     dispatch({ type: "LOADING" });
     fetch("http://localhost:3000/api/v1/rounds", {
@@ -18,7 +18,7 @@ export const getRounds = () => {
 };
 
 export const addRound = (round) => {
-  return (dispatch) => {
+  return (dispatch) => {  
     fetch("http://localhost:3000/api/v1/rounds", {
       method: "POST",
       headers: {
@@ -29,16 +29,15 @@ export const addRound = (round) => {
     })
       .then((resp) => resp.json())
       .then((round) => {
-        console.log("round added")
+        console.log(round)
         dispatch({ type: "ADD_ROUND", round });
       });
   };
 };
 
-export const findUserRound = (userId) => {
-  console.log("user round search")
+export const findUserRound = (userId, id) => {
+  console.log("fetching user round")
   return (dispatch) => {
-    dispatch({ type: "LOADING" });
     fetch(`http://localhost:3000/api/v1/users/${userId}/rounds/${id}`, {
       method: "GET",
       headers: {
@@ -50,6 +49,24 @@ export const findUserRound = (userId) => {
       .then((round) => {
         console.log(round)
         dispatch({ type: "FIND_USER_ROUND", round });
+      });
+  };
+};
+
+export const getUserRounds = (userId) => {
+  console.log("user rounds")
+  return (dispatch) => {
+    fetch(`http://localhost:3000/api/v1/users/${userId}/rounds`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+    .then((resp) => resp.json())
+      .then((rounds) => {
+        console.log(rounds)
+        dispatch({ type: "GET_USER_ROUNDS", rounds })
       });
   };
 };

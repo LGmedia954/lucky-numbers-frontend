@@ -6,11 +6,12 @@ export class Home extends Component {
     return (
       <div className="viewable">
         <h1>LUCKY NUMBERS</h1><br />
-        <h3>1. Enter the name of your lottery.</h3>
-        <h3>2. Pick up to 6 numbers.</h3>
-        <h3>3. Save your round.</h3>
-        <h3>4. Call me if you win.</h3><br />
+        <h3>1. Please sign in to get started.</h3>
+        <h3>2. Enter the name of your lottery.</h3>
+        <h3>3. Pick up to 6 numbers.</h3>
+        <h3>4. Save your round.</h3>
         <p className="loot">&#128176;</p>
+        <h2>CALL ME IF YOU WIN !</h2><br />
       </div>
     );
   }
