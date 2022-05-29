@@ -1,4 +1,4 @@
-import uuid from "uuid"; 
+import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
   rounds: [],
@@ -19,18 +19,20 @@ const rounds = (state = initialState, action) => {
         rounds: action.rounds
       };
     case "ADD_ROUND":
-      state.filter(
-        user => user.id === action.round.user_id
-      );
       return {
         ...state,
-        rounds: [...state.rounds, action.round]
-      };
+        rounds: [...state.rounds, 
+        {
+          user: state.userId,
+          round: action.round
+        },
+      ],
+    }
     case "FIND_USER_ROUND":
-      state.findIndex(round => round.id === action.id);
+      state.lastIndexOf(round => round.id === action.id);
       return {
         ...state,
-        rounds: [...state.rounds, action.round]
+        rounds: [...state.rounds, action.round, uuidv4()]
       };
 
     default:
@@ -62,9 +64,19 @@ export default rounds;
 
 
 // case "ADD_ROUND":
+//   state.filter(
+//     user => user.id === action.round.user_id
+//   );
 //   return {
 //     ...state,
-//     rounds: [...state.rounds, action.round],
+//     rounds: [...state.rounds, action.round]
 //   };
 
 
+
+// case "FIND_USER_ROUND":
+//   state.findIndex(round => round.id === action.id);
+//   return {
+//     ...state,
+//     rounds: [...state.rounds, action.round]
+//   };

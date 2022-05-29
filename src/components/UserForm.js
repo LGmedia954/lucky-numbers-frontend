@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { addUser } from '../actions/users';
+
 export class UserForm extends Component {
 
   state = {
@@ -22,7 +24,12 @@ export class UserForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addUser(this.state, this.props.history);
+    const user = {...this.state, id: uuidv4() };
+    this.props.addUser(user);
+    this.setState({
+      email: '',
+      username: ''
+    });
   }
 
   render() {
@@ -74,15 +81,9 @@ export default connect(null, mapDispatchToProps)(UserForm);
 
 
 
-
-
-// import uuid from 'uuid';
-
 // handleOnSubmit = event => {
 //   event.preventDefault();
-//   const user = {...this.state, id: uuid() };
-//   this.props.addUser(user);
-//   console.log(user?.user?.username);
+//   this.props.addUser(this.state, this.props.history);
 //   this.setState({
 //     email: '',
 //     username: ''

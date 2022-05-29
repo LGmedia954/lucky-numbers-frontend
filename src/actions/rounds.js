@@ -17,7 +17,7 @@ export const getRounds = () => {
   };
 };
 
-export const addRound = (round, history) => {
+export const addRound = (round) => {
   return (dispatch) => {
     fetch("http://localhost:3000/api/v1/rounds", {
       method: "POST",
@@ -31,7 +31,6 @@ export const addRound = (round, history) => {
       .then((round) => {
         console.log("round added")
         dispatch({ type: "ADD_ROUND", round });
-        history.push("/rounds");
       });
   };
 };

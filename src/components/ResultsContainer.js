@@ -6,11 +6,10 @@ const ResultsContainer = () => {
   return (
     <div className="viewable">
       <div>
-        <User />
-      </div>
-        <br /><br />
-      <div>
         <Round />
+      </div>
+      <div>
+        <User />
       </div>
     </div>
   )

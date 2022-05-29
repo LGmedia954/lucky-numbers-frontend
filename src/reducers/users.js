@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const initialState = {
   users: [],
   loading: true,
@@ -22,10 +24,10 @@ const users = (state = initialState, action) => {
         users: [...state.users, action.user]
       };
     case "FIND_USER":
-      state.findIndex(user => user.id === action.id);
+      state.lastIndexOf(user => user.id === action.id);
       return {
         ...state,
-        users: [...state.users, action.user]
+        users: [...state.users, action.user, uuidv4()]
       };
 
     default:

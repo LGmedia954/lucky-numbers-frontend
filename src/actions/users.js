@@ -17,7 +17,7 @@ export const getUsers = () => {
   };
 };
 
-export const addUser = (user, history) => {
+export const addUser = (user) => {
   return (dispatch) => {
     fetch("http://localhost:3000/api/v1/users", {
       method: "POST",
@@ -31,7 +31,6 @@ export const addUser = (user, history) => {
       .then((user) => {
         console.log("user added")
         dispatch({ type: "ADD_USER", user });
-        history.push("/users");
       });
   };
 };
