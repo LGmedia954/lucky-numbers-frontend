@@ -59,10 +59,27 @@ export class UserForm extends Component {
   }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addUser: (user) => {
-      dispatch(addUser(user))
+export default connect(null, { addUser })(UserForm);
+
+
+
+
+
+// handleOnSubmit = event => {
+//   event.preventDefault();
+//   this.props.addUser(this.state);
+//   this.setState({
+//     email: '',
+//     username: ''
+//   });
+// }
+
+
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     addUser: (user) => {
+//       dispatch(addUser(user))
       
       // let newUser = { ...user };
       // newUser.ids = newUser.ids.split(',');
@@ -71,22 +88,11 @@ const mapDispatchToProps = dispatch => {
       // this.setState({
       //   users: newArr,
       // });
-    }
-  }
-};
+//     }
+//   }
+// };
 
-export default connect(null, mapDispatchToProps)(UserForm);
+// export default connect(null, mapDispatchToProps)(UserForm);
 
 // Alternative form:
 // export default connect(null, { addUser })(UserForm);
-
-
-
-// handleOnSubmit = event => {
-//   event.preventDefault();
-//   this.props.addUser(this.state, this.props.history);
-//   this.setState({
-//     email: '',
-//     username: ''
-//   });
-// }

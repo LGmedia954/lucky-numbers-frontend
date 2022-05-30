@@ -126,23 +126,7 @@ export class RoundForm extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addRound: (round) => {
-      dispatch(addRound(round))
-      
-      let newRound = { ...round };
-      newRound.ids = newRound.ids.split(',');
-      const newArr = this.state.users.concat(newRound);
-      
-      this.setState({
-        users: newArr,
-      });
-    }
-  }
-};
-
-export default connect(null, mapDispatchToProps)(RoundForm);
+export default connect(null, { addRound })(RoundForm);
 
 
 
@@ -164,8 +148,29 @@ export default connect(null, mapDispatchToProps)(RoundForm);
   //   });
   // }
 
+  
 
   // handleOnSubmit = event => {
   //   event.preventDefault();
-  //   this.props.addRound(this.state, this.props.history);
+  //   this.props.addRound(this.state);
   // };
+
+
+
+  // const mapDispatchToProps = dispatch => {
+  //   return {
+  //     addRound: (round) => {
+  //       dispatch(addRound(round))
+        
+  //       let newRound = { ...round };
+  //       newRound.ids = newRound.ids.split(',');
+  //       const newArr = this.state.users.concat(newRound);
+        
+  //       this.setState({
+  //         users: newArr,
+  //       });
+  //     }
+  //   }
+  // };
+  
+  // export default connect(null, mapDispatchToProps)(RoundForm);

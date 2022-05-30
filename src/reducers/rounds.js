@@ -29,6 +29,7 @@ const rounds = (state = initialState, action) => {
         ],
       }
     case "FIND_USER_ROUND":
+      // state.lastIndexOf((round) => {return action.round.id === round.id})
       state.lastIndexOf(round => round.id === action.id);
       return {
         ...state,
@@ -53,6 +54,8 @@ const rounds = (state = initialState, action) => {
 export default rounds;
 
 
+
+// const lastRound = rounds[rounds.length - 1]
 
 // export default function rounds(state = {
 //   rounds: []
