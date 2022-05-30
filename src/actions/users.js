@@ -18,6 +18,11 @@ export const getUsers = () => {
 };
 
 export const addUser = (user) => {
+  try {
+    findUser();
+  } catch (error) {
+    console.error(error);
+  }
   return (dispatch) => {
     fetch("http://localhost:3000/api/v1/users", {
       method: "POST",

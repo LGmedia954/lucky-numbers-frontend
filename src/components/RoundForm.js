@@ -67,6 +67,7 @@ export class RoundForm extends Component {
     event.preventDefault();
     const round = {...this.state, id: uuidv4() };
     this.props.addRound(round);
+    console.log(uuidv4());
   };
 
   render() {

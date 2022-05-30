@@ -26,6 +26,7 @@ export class UserForm extends Component {
     event.preventDefault();
     const user = {...this.state, id: uuidv4() };
     this.props.addUser(user);
+    console.log(uuidv4());
     // clear form
     this.setState({
       email: '',
