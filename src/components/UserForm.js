@@ -24,6 +24,7 @@ export class UserForm extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     this.props.addUser(this.state);
+    console.log(this.state)
      // clear form
     this.setState({
       email: '',

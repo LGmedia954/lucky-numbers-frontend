@@ -41,11 +41,19 @@ class App extends React.Component {
   }
 }
 
-  const mapStateToProps = (state) => {
-    return {
-      users: state.users,
-      rounds: state.rounds
-    };
+const mapStateToProps = (state) => {
+  return {
+    loading: state.loading,
   };
+};
   
   export default connect(mapStateToProps, { getUsers, getRounds })(App);
+
+
+
+  // const mapStateToProps = (state) => {
+  //   return {
+  //     users: state.users,
+  //     rounds: state.rounds
+  //   };
+  // };

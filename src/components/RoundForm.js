@@ -65,6 +65,7 @@ export class RoundForm extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     this.props.addRound(this.state)
+    console.log(this.state)
   }
 
   render() {

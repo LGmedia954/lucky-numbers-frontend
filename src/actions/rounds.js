@@ -16,7 +16,7 @@ export const getRounds = () => {
   };
 };
 
-export const addRound = (user, round) => {
+export const addRound = (round, navigate) => {
   return (dispatch) => {
     fetch("http://localhost:3000/api/v1/rounds", {
       method: "POST",
@@ -24,11 +24,7 @@ export const addRound = (user, round) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      // body: JSON.stringify({ round }),
-      body: JSON.stringify({
-        user: user, 
-        round: round
-      })
+      body: JSON.stringify({ round }),
     })
       .then((resp) => resp.json())
       .then((round) => {
@@ -61,5 +57,28 @@ export const findUserRound = (userId, id) => {
 //   return {
 //     type: 'ADD_ROUND',
 //     round
+//   };
+// };
+
+
+
+// export const addRound = (user, round) => {
+//   return (dispatch) => {
+//     fetch("http://localhost:3000/api/v1/rounds", {
+//       method: "POST",
+//       headers: {
+//         Accept: "application/json",
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({
+//         user: user, 
+//         round: round
+//       })
+//     })
+//       .then((resp) => resp.json())
+//       .then((round) => {
+//         console.log(round)
+//         dispatch({ type: "ADD_ROUND", round });
+//       });
 //   };
 // };

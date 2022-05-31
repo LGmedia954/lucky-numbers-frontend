@@ -25,7 +25,8 @@ const users = (state = initialState, action) => {
         users: [...state.users, taguser]
       };
     case "FIND_USER":
-      state.lastIndexOf(user => user.id === action.id)
+      console.log("finding user");
+      state.users.lastIndexOf(user => user.id === action.id)
       return {
         ...state,
         users: [...state.users, action.user, uuidv4()]

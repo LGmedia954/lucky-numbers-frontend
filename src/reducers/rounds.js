@@ -19,10 +19,10 @@ const rounds = (state = initialState, action) => {
         rounds: action.rounds
       };
     case "ADD_ROUND":
-      const grabround = { round: action.round, userId: action.round.userId, id: uuidv4() };
+      const taground = { round: action.round, userId: action.round.userId, id: uuidv4() };
       return {
         ...state,
-        rounds: [...state.rounds, grabround]
+        rounds: [...state.rounds, taground]
       }
     case "FIND_USER_ROUND":
       // state.lastIndexOf((round) => {return action.round.id === round.id})
