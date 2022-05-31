@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
 import { addUser } from '../actions/users';
 
 export class UserForm extends Component {
@@ -14,24 +13,22 @@ export class UserForm extends Component {
     this.setState({
       email: event.target.value
     });
-  }
+  };
 
   handleOnEmailChange = event => {
     this.setState({
       username: event.target.value
     });
-  }
+  };
 
   handleOnSubmit = event => {
     event.preventDefault();
-    const user = {...this.state, id: uuidv4() };
-    this.props.addUser(user);
-    console.log(uuidv4());
-    // clear form
+    this.props.addUser(this.state);
+     // clear form
     this.setState({
       email: '',
       username: ''
-    });
+    })
   }
 
   render() {
@@ -43,14 +40,14 @@ export class UserForm extends Component {
           <input className="ui small input"
             type="text" name="email" id="email" placeholder="Email"
             value={this.state.email}
-            onChange={(event) => this.handleOnNameChange(event)}
+            onChange={this.handleOnNameChange}
              />
         </p>
         <p>
           <input className="ui small input"
             type="text" name="username" id="username" placeholder="Username"
             value={this.state.username}
-            onChange={(event) => this.handleOnEmailChange(event)}
+            onChange={this.handleOnEmailChange}
             />      
         </p>
         <input type="submit" className="ui inverted yellow button" />
@@ -68,7 +65,10 @@ export default connect(null, { addUser })(UserForm);
 
 // handleOnSubmit = event => {
 //   event.preventDefault();
-//   this.props.addUser(this.state);
+//   const user = {...this.state, id: uuidv4() };
+//   this.props.addUser(user);
+//   console.log(uuidv4());
+//   // clear form
 //   this.setState({
 //     email: '',
 //     username: ''
@@ -95,5 +95,17 @@ export default connect(null, { addUser })(UserForm);
 
 // export default connect(null, mapDispatchToProps)(UserForm);
 
+
+
 // Alternative form:
 // export default connect(null, { addUser })(UserForm);
+
+
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     addUser: formData => dispatch({ type: 'ADD_USER', payload: formData })
+//   }
+// }
+
+// export default connect(null, mapDispatchToProps)(UserForm);

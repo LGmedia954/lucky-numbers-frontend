@@ -19,12 +19,13 @@ const users = (state = initialState, action) => {
         users: action.users,
       };
     case "ADD_USER":
+      const taguser = { user: action.user, id: uuidv4() };
       return {
         ...state,
-        users: [...state.users, action.user]
+        users: [...state.users, taguser]
       };
     case "FIND_USER":
-      state.lastIndexOf(user => user.id === action.id);
+      state.lastIndexOf(user => user.id === action.id)
       return {
         ...state,
         users: [...state.users, action.user, uuidv4()]

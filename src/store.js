@@ -12,6 +12,9 @@ export const store = configureStore({
   }
 }, composeWithDevTools(applyMiddleware(thunk)));
 
+// Redux-Thunk Middleware allows us to slightly alter the behavior of our actions, 
+// allowing us to add in asynchronous requests.
+
 
 
 // import { configureStore } from '@reduxjs/toolkit'

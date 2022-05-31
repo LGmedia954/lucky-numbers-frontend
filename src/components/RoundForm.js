@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { v4 as uuidv4 } from 'uuid';
 import { addRound } from "../actions/rounds";
 
 export class RoundForm extends Component {
@@ -65,10 +64,8 @@ export class RoundForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    const round = {...this.state, id: uuidv4() };
-    this.props.addRound(round);
-    console.log(uuidv4());
-  };
+    this.props.addRound(this.state)
+  }
 
   render() {
     return (
@@ -149,13 +146,13 @@ export default connect(null, { addRound })(RoundForm);
   //   });
   // }
 
-  
 
   // handleOnSubmit = event => {
   //   event.preventDefault();
-  //   this.props.addRound(this.state);
+  //   const round = {...this.state, id: uuidv4() };
+  //   this.props.addRound(round);
+  //   console.log(uuidv4());
   // };
-
 
 
   // const mapDispatchToProps = dispatch => {

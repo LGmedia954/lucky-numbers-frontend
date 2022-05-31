@@ -19,14 +19,10 @@ const rounds = (state = initialState, action) => {
         rounds: action.rounds
       };
     case "ADD_ROUND":
+      const grabround = { round: action.round, userId: action.round.userId, id: uuidv4() };
       return {
         ...state,
-        rounds: [...state.rounds, 
-          {
-            user: state.userId,
-            round: action.round
-          },
-        ],
+        rounds: [...state.rounds, grabround]
       }
     case "FIND_USER_ROUND":
       // state.lastIndexOf((round) => {return action.round.id === round.id})
@@ -35,16 +31,6 @@ const rounds = (state = initialState, action) => {
         ...state,
         rounds: [...state.rounds, action.round, uuidv4()]
       };
-    case "GET_USER_ROUNDS":
-      return {
-        ...state,
-        rounds: [...state.rounds, 
-          {
-            users: state.userIds,
-            rounds: action.rounds
-          },
-        ],
-      }
 
     default:
       return state;
@@ -93,3 +79,16 @@ export default rounds;
 //     ...state,
 //     rounds: [...state.rounds, action.round]
 //   };
+
+
+
+// case "ADD_ROUND":
+//   return {
+//     ...state,
+//     rounds: [...state.rounds, 
+//       {
+//         user: state.userId,
+//         round: action.round
+//       },
+//     ],
+//   }
