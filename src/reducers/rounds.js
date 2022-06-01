@@ -25,7 +25,7 @@ const rounds = (state = initialState, action) => {
         rounds: [...state.rounds, round]
       }
     case "FIND_USER_ROUND":
-      state.lastIndexOf(round => round.id === action.id);
+      // state.lastIndexOf(round => round.id === action.id);
       return {
         ...state,
         rounds: [...state.rounds.slice(-1), action.round, uuidv4()]
