@@ -19,17 +19,16 @@ const rounds = (state = initialState, action) => {
         rounds: action.rounds
       };
     case "ADD_ROUND":
-      const taground = { round: action.round, userId: action.round.userId, id: uuidv4() };
+      const round = { round: action.round, id: uuidv4() };
       return {
         ...state,
-        rounds: [...state.rounds, taground]
+        rounds: [...state.rounds, round]
       }
     case "FIND_USER_ROUND":
-      // state.lastIndexOf((round) => {return action.round.id === round.id})
       state.lastIndexOf(round => round.id === action.id);
       return {
         ...state,
-        rounds: [...state.rounds, action.round, uuidv4()]
+        rounds: [...state.rounds.slice(-1), action.round, uuidv4()]
       };
 
     default:
@@ -40,6 +39,16 @@ const rounds = (state = initialState, action) => {
 export default rounds;
 
 
+
+// state.lastIndexOf(round => round.id === action.id);
+// return {
+//   ...state,
+//   rounds: [...state.rounds, action.round, uuidv4()]
+// };
+
+// console.log(rounds.slice(-1));
+
+// state.lastIndexOf((round) => {return action.round.id === round.id})
 
 // const lastRound = rounds[rounds.length - 1]
 
@@ -59,6 +68,14 @@ export default rounds;
 
 //   }
 // };
+
+
+
+// case "ADD_ROUND":
+//   return {
+//     ...state,
+//     rounds: [...state.rounds, action.round]
+//   };
 
 
 
@@ -92,3 +109,17 @@ export default rounds;
 //       },
 //     ],
 //   }
+
+
+
+// case "FIND_USER_ROUND":
+//   // state.lastIndexOf((round) => {return action.round.id === round.id})
+//   idx = state.lastIndexOf(round => round.id === action.id);
+//   return {
+//     ...state,
+//     rounds: [...state.rounds, action.round, uuidv4()]
+//   };
+
+
+// Got rid of user_id on round
+// const round = { round: action.round, userId: action.round.userId, id: uuidv4() };

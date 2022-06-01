@@ -56,12 +56,6 @@ export class RoundForm extends Component {
     });
   };
 
-  handleUserId = event => {
-    this.setState({
-      user_id: event.target.value,
-    });
-  };
-
   handleOnSubmit = event => {
     event.preventDefault();
     this.props.addRound(this.state)
@@ -115,9 +109,6 @@ export class RoundForm extends Component {
               value={this.state.pick_six}
               onChange={this.handleNumSixChange}/>
           </div><br />
-            <input type="hidden" name="user_id" id="user_id" 
-            value={this.state.user_id} onChange={this.handleUserId}/>
-
           <input type="submit" className="ui inverted yellow button" />
         </form>
       </div>
@@ -173,3 +164,16 @@ export default connect(null, { addRound })(RoundForm);
   // };
   
   // export default connect(null, mapDispatchToProps)(RoundForm);
+
+
+
+// I has this earlier, but decided to get rid of the user_id on round.
+
+    // handleUserId = event => {
+  //   this.setState({
+  //     user_id: event.target.value,
+  //   });
+  // };
+
+              {/* <input type="hidden" name="user_id" id="user_id" 
+            value={this.state.user_id} onChange={this.handleUserId}/> */}
