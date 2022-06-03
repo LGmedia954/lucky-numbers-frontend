@@ -6,13 +6,13 @@
 
 [X] There are 2 container components.
 
-[ ] There are 5 stateless components.
+[X] There are 5 stateless components.
 
 [X] There are 3 routes.
 
 [X] React-router is being used with proper RESTful routing.
 
-[ ] Redux and redux-thunk middleware are being used to modify state change and make use of async actions to send data and receive data from the server.
+[X] Redux and redux-thunk middleware are being used to modify state change and make use of async actions to send data and receive data from the server.
 
 [X] Use of Rails API backend to persist data for the application.
 
@@ -20,4 +20,4 @@
 
 [ ] Good understanding of state and props in React.
 
-[ ] Knowledge of async JS with Promises.
+[X] Knowledge of async JS with Promises.

@@ -11,7 +11,6 @@ export class RoundForm extends Component {
     pick_four: '',
     pick_five: '',
     pick_six: '',
-    user_id: ''
   };
 
   handleTitleChange = event => {
@@ -139,6 +138,7 @@ export default connect(null, { addRound })(RoundForm);
   // }
 
 
+
   // handleOnSubmit = event => {
   //   event.preventDefault();
   //   const round = {...this.state, id: uuidv4() };
@@ -146,6 +146,7 @@ export default connect(null, { addRound })(RoundForm);
   //   console.log(uuidv4());
   // };
 
+  
 
   // const mapDispatchToProps = dispatch => {
   //   return {
@@ -167,7 +168,8 @@ export default connect(null, { addRound })(RoundForm);
 
 
 
-// I has this earlier, but decided to get rid of the user_id on round.
+// I has this earlier with hidden field, 
+// but decided to get rid of the user_id on round.
 
     // handleUserId = event => {
   //   this.setState({
@@ -175,5 +177,3 @@ export default connect(null, { addRound })(RoundForm);
   //   });
   // };
 
-              {/* <input type="hidden" name="user_id" id="user_id" 
-            value={this.state.user_id} onChange={this.handleUserId}/> */}
