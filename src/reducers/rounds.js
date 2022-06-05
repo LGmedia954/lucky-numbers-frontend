@@ -19,13 +19,8 @@ const rounds = (state = initialState, action) => {
     case "ADD_ROUND":
       return {
         ...state,
-        rounds: [...state.rounds,
-        {
-          user: state.user,
-          round: action.round
-        },
-      ],
-    }
+        rounds: [...state.rounds, action.round],
+      };
     case "FIND_USER_ROUND":
       return {
         ...state,
@@ -44,8 +39,13 @@ export default rounds;
 // case "ADD_ROUND":
 //   return {
 //     ...state,
-//     rounds: [...state.rounds, action.round],
-//   };
+//     rounds: [...state.rounds,
+//     {
+//       user: state.user,
+//       round: action.round
+//     },
+//   ],
+// }
 
 
 

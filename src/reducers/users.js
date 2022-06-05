@@ -29,7 +29,7 @@ const users = (state = initialState, action) => {
         // but has a new array for the `users` field
         users: [
         // with all of the old users, and the new user object
-          ...state.users.concat, user]
+          ...state.users, user]
       };
     case "FIND_USER":
       return {
