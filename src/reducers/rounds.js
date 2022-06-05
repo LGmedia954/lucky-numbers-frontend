@@ -95,11 +95,12 @@ export default rounds;
 
 
 // case "DELETE_USER_ROUND":
-//   return state.filter(round => round.id === action.round ? false : true)
-
-// case "DELETE_USER_ROUND":
 //   return {
 //     rounds: [
 //       ...state.rounds.filter(round => round !== action.round)
 //     ]
 //   };
+
+// case "DELETE_USER_ROUND":
+//   const rounds = state.rounds.filter(round => round.id !== action.id);
+//   return {...state, rounds }

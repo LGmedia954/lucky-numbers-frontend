@@ -2,8 +2,8 @@ import React from 'react';
 
 const Rounds = props => {
   
-  const rounds = props.rounds.rounds.map((round, index) => {
-    return <li key={index}>
+  const rounds = props.rounds.rounds.map((round, id) => {
+    return <li key={id}>
     {round.title} &nbsp;&nbsp;
     {round.pick_one}, &nbsp;&nbsp;
     {round.pick_two}, &nbsp;&nbsp;
@@ -15,9 +15,7 @@ const Rounds = props => {
 
   return (
     <div className="viewable">
-      <div>
-        <h2>{rounds}</h2>
-      </div>
+      <h2>{rounds}</h2>
     </div>
   );
 };
