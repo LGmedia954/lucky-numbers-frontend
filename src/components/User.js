@@ -4,7 +4,9 @@ export class User extends Component {
     const { username } = this.props;
     return (
       <div className="viewable">
-        <h2>Good Luck {username}!</h2>
+        <li>
+          <h2>Good Luck {username}!</h2>
+        </li>
         <p className="loot">&#128176;</p>
       </div>      
     );
@@ -12,3 +14,20 @@ export class User extends Component {
 }
 
 export default User;
+
+
+   
+// import React from "react";
+
+// const User = props => {
+//     return (
+//       <div className="viewable">
+//         <li>
+//           <h2>Good Luck {props.username}!</h2>
+//         </li>
+//         <p className="loot">&#128176;</p>
+//       </div>      
+//     );
+//   };
+  
+// export default User;

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { addRound } from "../actions/rounds";
 
 export class RoundForm extends Component {
+  
   state = {
     title: '',
     pick_one: '',
@@ -10,14 +11,14 @@ export class RoundForm extends Component {
     pick_three: '',
     pick_four: '',
     pick_five: '',
-    pick_six: '',
-  };
+    pick_six: ''
+  }
 
   handleTitleChange = event => {
     this.setState({
       title: event.target.value
     });
-  }
+  };
 
   handleNumOneChange = event => {
     this.setState({
@@ -65,7 +66,7 @@ export class RoundForm extends Component {
     return (
       <div>
         <h2>Save Your Round!</h2>
-        <form className="ui tiny form" onSubmit={this.handleSubmit}>
+        <form className="ui tiny form" onSubmit={this.handleOnSubmit}>
           <div>
             <input className="ui small input"
               type="text" name="title" id="title" placeholder="Game Title"
@@ -137,15 +138,6 @@ export default connect(null, { addRound })(RoundForm);
   //   });
   // }
 
-
-
-  // handleOnSubmit = event => {
-  //   event.preventDefault();
-  //   const round = {...this.state, id: uuidv4() };
-  //   this.props.addRound(round);
-  //   console.log(uuidv4());
-  // };
-
   
 
   // const mapDispatchToProps = dispatch => {
@@ -168,12 +160,15 @@ export default connect(null, { addRound })(RoundForm);
 
 
 
-// I has this earlier with hidden field, 
-// but decided to get rid of the user_id on round.
+// Alternative forms:
+// export default connect(null, { addRound })(RoundForm);
 
-    // handleUserId = event => {
-  //   this.setState({
-  //     user_id: event.target.value,
-  //   });
-  // };
 
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     addRound: formData => dispatch({ type: 'ADD_ROUND', payload: formData })
+//   }
+// }
+
+// export default connect(null, mapDispatchToProps)(UserForm);

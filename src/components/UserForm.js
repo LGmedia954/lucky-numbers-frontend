@@ -98,7 +98,7 @@ export default connect(null, { addUser })(UserForm);
 
 
 
-// Alternative form:
+// Alternative forms:
 // export default connect(null, { addUser })(UserForm);
 
 

@@ -29,7 +29,7 @@ const users = (state = initialState, action) => {
         // but has a new array for the `users` field
         users: [
         // with all of the old users, and the new user object
-          ...state.users, user]
+          ...state.users.concat, user]
       };
     case "FIND_USER":
       return {
@@ -44,6 +44,15 @@ const users = (state = initialState, action) => {
 };
 
 export default users;
+
+
+
+// REACT/REDUX flow...
+// A Component dispatches an action.
+// An Action hits the reducer.
+// The Reducer will update the state depending on the action that was dispatched.
+// The Reducer will pass the updated state to the store.
+// The Component will receive new state.
 
 
 
@@ -74,4 +83,4 @@ export default users;
 
 
 
-// state.users.lastIndexOf(user => user.id === action.id)
+// state.users.lastIndexOf(user => user.id && action.id)

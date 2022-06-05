@@ -42,6 +42,7 @@ export const findUser = (id) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
+      // body: JSON.stringify({ user: id }),
     })
       .then((resp) => resp.json())
       .then((user) => {
@@ -50,6 +51,8 @@ export const findUser = (id) => {
       });
   };
 };
+
+
 
 
 

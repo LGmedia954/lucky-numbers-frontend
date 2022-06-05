@@ -16,15 +16,19 @@ export const getRounds = () => {
   };
 };
 
-export const addRound = (userId, round) => {
+export const addRound = (id, round) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/${userId}/rounds`, {
+    fetch(`http://localhost:3000/api/v1/users/${id}/rounds`, {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ round }),
+      // body: JSON.stringify({ round }),
+        body: JSON.stringify({
+          user: id,
+          round: round
+      })
     })
       .then((resp) => resp.json())
       .then((round) => {
@@ -34,9 +38,9 @@ export const addRound = (userId, round) => {
   };
 };
 
-export const findUserRound = (userId, id) => {
+export const findUserRound = (id, round) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/${userId}/rounds/${id}`, {
+    fetch(`http://localhost:3000/api/v1/users/${id}/rounds/${round}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
@@ -53,6 +57,26 @@ export const findUserRound = (userId, id) => {
 
 
 
+// export const deleteUserRound = (id, round) => {
+//   return (dispatch) => {
+//     fetch(`http://localhost:3000/api/v1/users/${id}/rounds/${round}`, {
+//       method: "DELETE",
+//       headers: {
+//         Accept: "application/json",
+//         "Content-Type": "application/json",
+//       },
+//     })
+//       .then((resp) => resp.json())
+//       .then((round) => {
+//         dispatch({ type: "DELETE_USER_ROUND", round });
+//       });
+//   };
+// };
+
+
+
+
+
 // export const addRound = (round) => {
 //   return {
 //     type: 'ADD_ROUND',
@@ -61,24 +85,3 @@ export const findUserRound = (userId, id) => {
 // };
 
 
-
-// export const addRound = (user, round) => {
-//   return (dispatch) => {
-//     fetch("http://localhost:3000/api/v1/rounds", {
-//       method: "POST",
-//       headers: {
-//         Accept: "application/json",
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({
-//         user: user, 
-//         round: round
-//       })
-//     })
-//       .then((resp) => resp.json())
-//       .then((round) => {
-//         console.log(round)
-//         dispatch({ type: "ADD_ROUND", round });
-//       });
-//   };
-// };
