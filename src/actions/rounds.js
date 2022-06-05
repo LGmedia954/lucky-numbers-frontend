@@ -16,19 +16,19 @@ export const getRounds = () => {
   };
 };
 
-export const addRound = (round, userId) => {
+export const addRound = (round, id) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/${userId}/rounds`, {
+    fetch(`http://localhost:3000/api/v1/users/${id}/rounds`, {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ round }),
-      //   body: JSON.stringify({
-      //     user: id,
-      //     round: round
-      // })
+      // body: JSON.stringify({ round }),
+        body: JSON.stringify({
+          user: id,
+          round: round
+      })
     })
       .then((resp) => resp.json())
       .then((round) => {

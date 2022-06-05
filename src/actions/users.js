@@ -30,6 +30,8 @@ export const addUser = (user) => {
       .then((user) => {
         console.log(user)
         dispatch({ type: "ADD_USER", user });
+        dispatch(getUsers());
+        dispatch(findUser());
       });
   };
 };
