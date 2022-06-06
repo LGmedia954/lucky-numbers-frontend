@@ -31,7 +31,6 @@ export const addUser = (user) => {
         console.log(user)
         dispatch({ type: "ADD_USER", user });
         dispatch(getUsers());
-        dispatch(findUser());
       });
   };
 };
