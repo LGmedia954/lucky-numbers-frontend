@@ -104,3 +104,19 @@ export default rounds;
 // case "DELETE_USER_ROUND":
 //   const rounds = state.rounds.filter(round => round.id !== action.id);
 //   return {...state, rounds }
+
+
+
+// Stack Overflow
+// export const create = (id) => {
+//   return async (dispatch, getState) => {
+//        const currentState= getState().example;
+//       console.log(currentState) 
+//   };
+// };
+
+// export const grabId = (id) => {
+//   return async (dispatch, getState) => {
+//     const id= getState().user.id;
+//     console.log(id)};
+// };

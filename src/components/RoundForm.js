@@ -5,24 +5,16 @@ import { v4 as uuidv4 } from 'uuid';
 
 export class RoundForm extends Component {
 
-  componentDidMount() {
-    // const state = store.getState();
-    this.getState({
+  constructor(props) {
+    super(props);
+    this.state({
     // checking state for the unique id
       id: uuidv4()
     });
-    console.log(this.getState());
+    console.log(this.state());
+    this.onInputChangeHandler = this.onInputChangeHandler.bind(this);
+    this.handleOnSubmit = this.handleOnSubmit.bind(this);
   }
-
-  // componentDidUpdate(prevProps) {
-  //   // Typical usage (don't forget to compare props):
-  //   if (this.props.userID !== prevProps.userID) {
-  //     this.fetchData(this.props.userID);
-  //   }
-  // }
-  // You may call setState() immediately in componentDidUpdate() 
-  // but note that it must be wrapped in a condition like above, 
-  // or you’ll cause an infinite loop.
   
   state = {
     title: '',
@@ -205,3 +197,19 @@ export default connect(null, { addRound })(RoundForm);
 //   <input type="hidden" name="user_id" id="userId" 
 //   value={this.state.user_id} onChange={this.handleUserIdHidden}/>
 // </div>
+
+
+
+  // componentDidUpdate(prevProps) {
+  //   // Typical usage (don't forget to compare props):
+  //   if (this.props.userID !== prevProps.userID) {
+  //     this.fetchData(this.props.userID);
+  //   }
+  // }
+  // You may call setState() immediately in componentDidUpdate() 
+  // but note that it must be wrapped in a condition like above, 
+  // or you’ll cause an infinite loop.
+
+
+
+      // const state = store.getState();
