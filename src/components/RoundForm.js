@@ -1,18 +1,17 @@
-import React, { Component } from "react";
+import React from 'react';
 import { connect } from "react-redux";
 import { addRound } from "../actions/rounds";
 import { v4 as uuidv4 } from 'uuid';
 
-export class RoundForm extends Component {
-
+// export class RoundForm extends Component {
+class RoundForm extends React.Component { 
   constructor(props) {
     super(props);
-    this.state({
+    this.state = {
     // checking state for the unique id
       id: uuidv4()
-    });
+    };
     console.log(this.state());
-    this.onInputChangeHandler = this.onInputChangeHandler.bind(this);
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
   }
   
