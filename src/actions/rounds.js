@@ -17,6 +17,7 @@ export const getRounds = () => {
 };
 
 export const addRound = (round, id) => {
+  id = JSON.parse(localStorage.getItem('id'))
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${id}/rounds`, {
       method: "POST",
@@ -24,17 +25,12 @@ export const addRound = (round, id) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      // body: JSON.stringify({ round }),
-        body: JSON.stringify({
-          user: id,
-          round: round
-      })
+      body: JSON.stringify({ round }),
     })
       .then((resp) => resp.json())
       .then((round) => {
         console.log(round)
         dispatch({ type: "ADD_ROUND", round });
-        dispatch(findUserRound());
       });
   };
 };
@@ -86,3 +82,8 @@ export const findUserRound = (id, round) => {
 // };
 
 
+
+      // body: JSON.stringify({
+      //   user: id,
+      //   round: round
+      // })

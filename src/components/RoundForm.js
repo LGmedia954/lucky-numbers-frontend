@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { addRound } from "../actions/rounds";
 import { v4 as uuidv4 } from 'uuid';
 
-// export class RoundForm extends Component {
 class RoundForm extends React.Component { 
   constructor(props) {
     super(props);
@@ -11,7 +10,7 @@ class RoundForm extends React.Component {
       user:JSON.parse(localStorage.getItem('id')) || {
     // checking state for the unique id
       id: uuidv4()
-    }};
+    }, user_id:JSON.parse(localStorage.getItem('id'))};
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
   }
   
@@ -210,5 +209,6 @@ export default connect(null, { addRound })(RoundForm);
   // or you’ll cause an infinite loop.
 
 
-
       // const state = store.getState();
+
+      // export class RoundForm extends Component {
