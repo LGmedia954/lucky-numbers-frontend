@@ -16,9 +16,9 @@ export const getRounds = () => {
   };
 };
 
-export const addRound = (round, userId) => {
+export const addRound = (round, id) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/${userId}/rounds`, {
+    fetch(`http://localhost:3000/api/v1/users/${id}/rounds`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -26,7 +26,7 @@ export const addRound = (round, userId) => {
       },
       // body: JSON.stringify({ round }),
         body: JSON.stringify({
-          user: userId,
+          user: id,
           round: round
       })
     })
@@ -39,9 +39,9 @@ export const addRound = (round, userId) => {
   };
 };
 
-export const findUserRound = (userId, round) => {
+export const findUserRound = (id, round) => {
   return (dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/${userId}/rounds/${round}`, {
+    fetch(`http://localhost:3000/api/v1/users/${id}/rounds/${round}`, {
       method: "GET",
       headers: {
         Accept: "application/json",
