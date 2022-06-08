@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 class RoundForm extends React.Component { 
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = JSON.parse(window.localStorage.getItem('id')) || {
     // checking state for the unique id
       id: uuidv4()
     };
