@@ -16,10 +16,10 @@ export const getRounds = () => {
   };
 };
 
-export const addRound = (round, id) => {
+export const addRound = (round, userId) => {
   return (dispatch) => {
     // /api/v1/users/:user_id/rounds(.:format)
-    fetch(`http://localhost:3000/api/v1/users/${id}/rounds`, {
+    fetch(`http://localhost:3000/api/v1/users/${userId}/rounds`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -35,10 +35,10 @@ export const addRound = (round, id) => {
   };
 };
 
-export const findUserRound = (id, round) => {
+export const findUserRound = (userId, roundId) => {
   return (dispatch) => {
     // /api/v1/users/:user_id/rounds/:id(.:format)
-    fetch(`http://localhost:3000/api/v1/users/${id}/rounds/${round}`, {
+    fetch(`http://localhost:3000/api/v1/users/${userId}/rounds/${roundId}`, {
       method: "GET",
       headers: {
         Accept: "application/json",

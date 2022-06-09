@@ -30,7 +30,7 @@ export const addUser = (user) => {
       .then((user) => {
         localStorage.setItem('id', JSON.stringify(user));
         dispatch({ type: "ADD_USER", user });
-        // dispatch(getUsers());
+        dispatch(getUsers());
       });
   };
 };

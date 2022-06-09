@@ -34,7 +34,7 @@ const users = (state = initialState, action) => {
     case "FIND_USER":
       return {
         ...state,
-        users: [...state.users, action.user]
+        users: [...state.users.slice(-1)]
       };
     // If this reducer doesn't recognize the action type, or doesn't
     // care about this specific action, return the existing state unchanged

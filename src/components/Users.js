@@ -8,7 +8,7 @@ const Users = props => {
   
   return (
     <div className="viewable">
-      <h2>{users}</h2>
+      <h2 id="userList">{users}</h2>
     </div>
   );
 };
