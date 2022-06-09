@@ -17,8 +17,8 @@ export const getRounds = () => {
 };
 
 export const addRound = (round, id) => {
-  id = JSON.parse(localStorage.getItem('id'))
   return (dispatch) => {
+    // /api/v1/users/:user_id/rounds(.:format)
     fetch(`http://localhost:3000/api/v1/users/${id}/rounds`, {
       method: "POST",
       headers: {
@@ -29,14 +29,15 @@ export const addRound = (round, id) => {
     })
       .then((resp) => resp.json())
       .then((round) => {
-        console.log(round)
         dispatch({ type: "ADD_ROUND", round });
+        console.log(round)
       });
   };
 };
 
 export const findUserRound = (id, round) => {
   return (dispatch) => {
+    // /api/v1/users/:user_id/rounds/:id(.:format)
     fetch(`http://localhost:3000/api/v1/users/${id}/rounds/${round}`, {
       method: "GET",
       headers: {
@@ -67,17 +68,6 @@ export const findUserRound = (id, round) => {
 //       .then((round) => {
 //         dispatch({ type: "DELETE_USER_ROUND", round });
 //       });
-//   };
-// };
-
-
-
-
-
-// export const addRound = (round) => {
-//   return {
-//     type: 'ADD_ROUND',
-//     round
 //   };
 // };
 

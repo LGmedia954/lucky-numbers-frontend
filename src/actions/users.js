@@ -29,9 +29,8 @@ export const addUser = (user) => {
       .then((resp) => resp.json())
       .then((user) => {
         localStorage.setItem('id', JSON.stringify(user));
-        console.log(user)
         dispatch({ type: "ADD_USER", user });
-        dispatch(getUsers());
+        // dispatch(getUsers());
       });
   };
 };
@@ -53,15 +52,6 @@ export const findUser = (id) => {
       });
   };
 };
-
-
-
-// export const addUser = (user) => {
-//   return {
-//     type: 'ADD_USER',
-//     user
-//   };
-// };
 
 
 

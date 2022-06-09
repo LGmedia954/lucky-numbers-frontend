@@ -10,7 +10,7 @@ class RoundForm extends React.Component {
       user:JSON.parse(localStorage.getItem('id')) || {
     // checking state for the unique id
       id: uuidv4()
-    }, user_id:JSON.parse(localStorage.getItem('id'))};
+    }};
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
   }
   
@@ -69,7 +69,7 @@ class RoundForm extends React.Component {
   handleOnSubmit = event => {
     event.preventDefault();
     this.props.addRound(this.state)
-    console.log(this.state)
+    // console.log(this.state)
   }
 
   render() {
@@ -212,3 +212,5 @@ export default connect(null, { addRound })(RoundForm);
       // const state = store.getState();
 
       // export class RoundForm extends Component {
+
+      // , user_id:JSON.parse(localStorage.getItem('id'))
