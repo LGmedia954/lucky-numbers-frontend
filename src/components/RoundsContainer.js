@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Rounds from './Rounds';
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actions from '../actions/users'
 
 class RoundsContainer extends Component {
   render() {
@@ -14,7 +16,9 @@ class RoundsContainer extends Component {
 
 const mapStateToProps = ({ rounds }) => ({ rounds })
 
-const mapDispatchToProps = dispatch => ({ addRound: round => dispatch({ type: "ADD_ROUND", round }) })
+const mapDispatchToProps = (dispatch) => {
+  return { actions: bindActionCreators(actions, dispatch) }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(RoundsContainer)
 
@@ -34,3 +38,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(RoundsContainer)
 // }
 
 // export default RoundsContainer;
+
+
+
+// const mapDispatchToProps = dispatch => ({ addRound: round => dispatch({ type: "ADD_ROUND", round }) })

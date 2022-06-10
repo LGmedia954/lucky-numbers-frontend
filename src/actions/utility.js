@@ -20,3 +20,8 @@ export const showUserId = (id) => {
 // showEmail();
 // showUsername();
 // showUserId();
+
+// showId(this.state.id);
+// showEmail(this.state.email);
+// showUsername(this.state.username);
+// showUserId(this.state.id);

@@ -65,3 +65,10 @@ export const fetchUserDetails = (props) => {
       }))
   }
 }
+
+// for above
+// componentDidMount() {
+//   this.props.actions.fetchUserDetails(this.props)
+// }
+//   render() {
+  // const userDetails = this.props.userDetails

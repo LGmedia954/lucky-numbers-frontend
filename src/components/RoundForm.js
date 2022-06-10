@@ -2,13 +2,6 @@ import React from 'react';
 import { connect } from "react-redux";
 import { addRound } from "../actions/rounds";
 class RoundForm extends React.Component { 
-  constructor(props) {
-    super(props);
-    this.state = {
-      user:JSON.parse(localStorage.getItem('id'))
-    };
-    this.handleOnSubmit = this.handleOnSubmit.bind(this);
-  }
   
   state = {
     title: '',
@@ -17,7 +10,8 @@ class RoundForm extends React.Component {
     pick_three: '',
     pick_four: '',
     pick_five: '',
-    pick_six: ''
+    pick_six: '',
+    user_id:JSON.parse(localStorage.getItem('id'))
   }
 
   handleTitleChange = event => {
@@ -64,8 +58,8 @@ class RoundForm extends React.Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addRound(this.state)
-    // console.log(this.state)
+    this.props.addRound(this.state, this.state.user_id)
+    console.log(this.state)
   }
 
   render() {
@@ -126,26 +120,6 @@ export default connect(null, { addRound })(RoundForm);
 
 
 
-  
-
-  // const mapDispatchToProps = dispatch => {
-  //   return {
-  //     addRound: (round) => {
-  //       dispatch(addRound(round))
-        
-  //       let newRound = { ...round };
-  //       newRound.ids = newRound.ids.split(',');
-  //       const newArr = this.state.users.concat(newRound);
-        
-  //       this.setState({
-  //         users: newArr,
-  //       });
-  //     }
-  //   }
-  // };
-  
-  // export default connect(null, mapDispatchToProps)(RoundForm);
-
 
 
 // Alternative forms:
@@ -177,7 +151,7 @@ export default connect(null, { addRound })(RoundForm);
 
 
   // componentDidUpdate(prevProps) {
-  //   // Typical usage (don't forget to compare props):
+    // Typical usage (don't forget to compare props):
   //   if (this.props.userID !== prevProps.userID) {
   //     this.fetchData(this.props.userID);
   //   }
@@ -187,8 +161,19 @@ export default connect(null, { addRound })(RoundForm);
   // or you’ll cause an infinite loop.
 
 
-      // const state = store.getState();
 
-      // export class RoundForm extends Component {
+// export class RoundForm extends Component {
 
-      // , user_id:JSON.parse(localStorage.getItem('id'))
+// const state = store.getState();
+
+// class RoundForm extends React.Component { 
+
+// constructor(props) {
+//   super(props);
+//   this.state = {
+//     user:JSON.parse(localStorage.getItem('id'))
+//   };
+//   this.handleOnSubmit = this.handleOnSubmit.bind(this);
+// }
+
+// , user_id:JSON.parse(localStorage.getItem('id'))

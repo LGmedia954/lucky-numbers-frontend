@@ -23,13 +23,13 @@ export class UserForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    // this.props.addUser(this.state);
+    this.props.addUser(this.state);
     console.log(this.state)
     // clear form
-    // this.setState({
-    //   email: '',
-    //   username: ''
-    // })
+    this.setState({
+      email: '',
+      username: ''
+    })
   }
 
   render() {
@@ -62,32 +62,11 @@ export default connect(null, { addUser })(UserForm);
 
 
 
-
-
-// showId(this.state.id);
-    // showEmail(this.state.email);
-    // showUsername(this.state.username);
-    // showUserId(this.state.id);
-
-
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     addUser: (user) => {
-//       dispatch(addUser(user))
-      
-      // let newUser = { ...user };
-      // newUser.ids = newUser.ids.split(',');
-      // const newArr = this.state.users.concat(newUser);
-      
-      // this.setState({
-      //   users: newArr,
-      // });
-//     }
-//   }
+// Dan Abramov thread
+// const mapStateToProps = (state, ownProps) => {
+//   const id = ownProps.params.id;
+//   return { id };
 // };
-
-// export default connect(null, mapDispatchToProps)(UserForm);
 
 
 

@@ -46,13 +46,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
 
 
 // const mapStateToProps = (state) => {
-//   if (state.users.users.length > 0) {
-//     return {
-//       userId: state.users.users.id
-//     }
-//   }
-
-
+//   return { userId: state.user.id }
+// }
 
 // const mapDispatchToProps = (dispatch) => {
 //   return { actions: bindActionCreators(actions, dispatch) }
@@ -69,24 +64,19 @@ export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
 
 
 
-// // from https://react-redux.js.org/using-react-redux/connect-mapstate
+// from https://react-redux.js.org/using-react-redux/connect-mapstate
 // const mapStateToProps = (state, ownProps) => {
 //   const { userSearch } = state
-//   // ownProps would look like { "id" : 123 }
+   // ownProps would look like { "id" : 123 }
 //   const { id } = ownProps
 //   const user = getUserById(state, id)
-//   // component receives additionally:
+   // component receives additionally:
 //   return { user, userSearch }
 // };
 
 
 
-// const mapStateToProps = (state, props) =>
-//   // Get user data from the store for this user ID.
-//   fetchUserDetails(state, props.id)
-
-
-
+// Dan Abramov thread
 // const mapStateToProps = (state, ownProps) => {
 //   const id = ownProps.params.id;
 //   return { id };
@@ -110,6 +100,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
 
 
 
+// from CodeGrepper
 // const mapStateToProps = (state, ownProps) => {
 //   return {
 //     user: state.users[ownProps.id]
@@ -118,3 +109,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
 
 
 
+// https://stackoverflow.com/questions/41198842/
+// what-is-the-use-of-the-ownprops-arg-in-mapstatetoprops-and-mapdispatchtoprops
+// const mapStateToProps = (state, props) =>
+  // Get user data from the store for this user ID.
+//   fetchUserDetails(state, props.id)
