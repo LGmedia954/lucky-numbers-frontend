@@ -2,6 +2,7 @@ import React, { Component } from "react";
 export class User extends Component {
   
   render() {
+    // const user = this.props.user
     const { username } = this.props;
     return (
       <div className="viewable">

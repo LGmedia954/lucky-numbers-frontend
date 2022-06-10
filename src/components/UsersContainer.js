@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import Users from './Users';
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actions from '../actions/users'
 
-class UsersContainer extends Component {
+export class UsersContainer extends Component {
   render() {
     return (
       <div className="viewable">
@@ -12,11 +14,18 @@ class UsersContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ users }) => ({ users })
+const mapStateToProps = (state) => {
+  if (state.users.users.length > 0) {
+    return {
+      userId: state.users.users.id
+    }
+  }
 
-const mapDispatchToProps = dispatch => ({ addUser: user => dispatch({ type: "ADD_USER", user }) })
+const mapDispatchToProps = (dispatch) => {
+  return { actions: bindActionCreators(actions, dispatch) }
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
+connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
 
 
 
@@ -34,3 +43,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
 // }
 
 // export default UsersContainer;
+
+
+
+// const mapStateToProps = ({ users }) => ({ users })
+
+// const mapDispatchToProps = dispatch => ({ addUser: user => dispatch({ type: "ADD_USER", user }) })

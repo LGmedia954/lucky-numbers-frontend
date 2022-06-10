@@ -53,10 +53,15 @@ export const findUser = (id) => {
   };
 };
 
-
-
-// try {
-//   findUser();
-// } catch (error) {
-//   console.error(error);
-// }
+// trying to grab user details
+export function fetchUserDetails(props) {
+  return (dispatch) => {
+    dispatch({ type: "LOADING" });
+    return fetch(`http://localhost:3000/api/users/${props.userId}`)
+      .then(resp => resp.json())
+      .then(user => dispatch({
+        type: 'FETCH_USER_DETAILS',
+        user: user
+      }))
+  }
+}

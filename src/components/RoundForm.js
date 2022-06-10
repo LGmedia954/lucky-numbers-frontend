@@ -75,7 +75,7 @@ class RoundForm extends React.Component {
     return (
       <div>
         <h2>Save Your Round!</h2>
-        <form id="roundForm" className="ui tiny form" onSubmit={this.handleOnSubmit}>
+        <form id="round-form" className="ui tiny form" onSubmit={this.handleOnSubmit}>
           <div>
             <input className="ui small input"
               type="text" name="title" id="title" placeholder="Game Title"

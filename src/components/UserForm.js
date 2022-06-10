@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addUser } from '../actions/users';
-import { showId, showEmail, showUsername, showUserId } from '../actions/users';
+import { v4 as uuidv4 } from 'uuid';
+import { showId, showEmail, showUsername, showUserId } from '../actions/utility';
 export class UserForm extends Component {
 
   state = {
@@ -23,24 +24,22 @@ export class UserForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addUser(this.state);
-    showId();
-    showEmail();
-    showUsername();
-    showUserId();
-    // console.log(this.state)
-     // clear form
-    this.setState({
-      email: '',
-      username: ''
-    })
+    const user = {...this.state, id: uuidv4()};
+    // this.props.addUser(this.state);
+    this.props.addUser(user);
+    console.log(this.state)
+    // clear form
+    // this.setState({
+    //   email: '',
+    //   username: ''
+    // })
   }
 
   render() {
     return(
       <div className="viewable">
       <h2>SIGN IN</h2>
-      <form id="userForm" className="ui small form" onSubmit={(event) => this.handleOnSubmit(event)}>
+      <form id="user-form" className="ui small form" onSubmit={(event) => this.handleOnSubmit(event)}>
         <p>
           <input className="ui small input"
             type="text" name="email" id="email" placeholder="Email"
@@ -78,13 +77,18 @@ export default connect(null, { addUser })(UserForm);
 //   event.preventDefault();
 //   const user = {...this.state, id: uuidv4() };
 //   this.props.addUser(user);
-//   console.log(uuidv4());
 //   // clear form
 //   this.setState({
 //     email: '',
 //     username: ''
 //   });
 // }
+
+
+// showId(this.state.id);
+    // showEmail(this.state.email);
+    // showUsername(this.state.username);
+    // showUserId(this.state.id);
 
 
 

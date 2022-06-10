@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
   users: [],
@@ -22,19 +22,26 @@ const users = (state = initialState, action) => {
       };
     case "ADD_USER":
       // We need to return a new state object
-      const user = { user: action.user, id: uuidv4() };
+      // const user = { user: action.user, id: uuidv4() };
       return {
         // that has all the existing state data
         ...state,
         // but has a new array for the `users` field
         users: [
         // with all of the old users, and the new user object
-          ...state.users, user]
+          ...state.users, action.user],
       };
     case "FIND_USER":
       return {
         ...state,
         users: [...state.users.slice(-1)]
+      };
+    // frontend difficulty recognizing the user
+    case "FETCH_USER_DETAILS":
+      return {
+        id: action.user.id,
+        email: action.user.email,
+        username: action.user.username,
       };
     // If this reducer doesn't recognize the action type, or doesn't
     // care about this specific action, return the existing state unchanged
