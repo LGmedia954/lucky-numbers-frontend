@@ -1,15 +1,12 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { addRound } from "../actions/rounds";
-import { v4 as uuidv4 } from 'uuid';
 class RoundForm extends React.Component { 
   constructor(props) {
     super(props);
     this.state = {
-      user:JSON.parse(localStorage.getItem('id')) || {
-    // checking state for the unique id
-      id: uuidv4()
-    }};
+      user:JSON.parse(localStorage.getItem('id'))
+    };
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
   }
   
@@ -128,24 +125,6 @@ class RoundForm extends React.Component {
 export default connect(null, { addRound })(RoundForm);
 
 
-
-
-
-// handleOnSubmit = event => {
-//   event.preventDefault();
-//   const round = {...this.state, id: uuid() };
-//   this.props.addRound(round);
-//   this.setState({
-  //      title: "",
-  //      pick_one: "",
-  //      pick_two: "",
-  //      pick_three: "",
-  //      pick_four: "",
-  //      pick_five: "",
-  //      pick_six: "",
-  //      user_id: "",
-  //   });
-  // }
 
   
 

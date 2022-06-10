@@ -51,7 +51,7 @@ export default rounds;
 
 // return {
 //   ...state,
-//   rounds: [...state.rounds, action.round, uuidv4()]
+//   rounds: [...state.rounds, action.round]
 // };
 
 // state.lastIndexOf((round) => {return action.round.id === round.id})
@@ -89,7 +89,7 @@ export default rounds;
 //   idx = state.lastIndexOf(round => round.id === action.id);
 //   return {
 //     ...state,
-//     rounds: [...state.rounds, action.round, uuidv4()]
+//     rounds: [...state.rounds, action.round]
 //   };
 
 

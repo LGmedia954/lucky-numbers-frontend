@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addUser } from '../actions/users';
-import { v4 as uuidv4 } from 'uuid';
 import { showId, showEmail, showUsername, showUserId } from '../actions/utility';
 export class UserForm extends Component {
 
@@ -24,9 +23,7 @@ export class UserForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    const user = {...this.state, id: uuidv4()};
     // this.props.addUser(this.state);
-    this.props.addUser(user);
     console.log(this.state)
     // clear form
     // this.setState({
@@ -56,12 +53,6 @@ export class UserForm extends Component {
         </p>
         <input type="submit" className="ui inverted yellow button" />
       </form>
-        <div>
-          <h3 id='id'></h3>
-          <h3 id="email"></h3>
-          <h3 id="username"></h3>
-          <h3 id="user_id"></h3>
-        </div>
       </div>
     );
   }
@@ -71,18 +62,6 @@ export default connect(null, { addUser })(UserForm);
 
 
 
-
-
-// handleOnSubmit = event => {
-//   event.preventDefault();
-//   const user = {...this.state, id: uuidv4() };
-//   this.props.addUser(user);
-//   // clear form
-//   this.setState({
-//     email: '',
-//     username: ''
-//   });
-// }
 
 
 // showId(this.state.id);
@@ -124,3 +103,25 @@ export default connect(null, { addUser })(UserForm);
 // }
 
 // export default connect(null, mapDispatchToProps)(UserForm);
+
+
+
+// const mapStateToProps(state, ownProps) {
+//   return {
+//     id: state.user.id,
+//     email: state.user.email,
+//     username: state.user.username
+//   }
+
+// function mapDispatchToProps(dispatch) {
+//   return { actions: bindActionCreators(actions, dispatch) }
+// }
+
+
+
+// {/* <div>
+// <h3 id='id'></h3>
+// <h3 id="email"></h3>
+// <h3 id="username"></h3>
+// <h3 id="user_id"></h3>
+// </div> */}

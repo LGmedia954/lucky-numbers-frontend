@@ -1,5 +1,3 @@
-// import { v4 as uuidv4 } from 'uuid';
-
 const initialState = {
   users: [],
   loading: true,
@@ -22,7 +20,6 @@ const users = (state = initialState, action) => {
       };
     case "ADD_USER":
       // We need to return a new state object
-      // const user = { user: action.user, id: uuidv4() };
       return {
         // that has all the existing state data
         ...state,
@@ -38,6 +35,7 @@ const users = (state = initialState, action) => {
       };
     // frontend difficulty recognizing the user
     case "FETCH_USER_DETAILS":
+      debugger
       return {
         id: action.user.id,
         email: action.user.email,
