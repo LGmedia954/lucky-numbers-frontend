@@ -54,7 +54,7 @@ export const findUser = (id) => {
 };
 
 // trying to grab user details
-export function fetchUserDetails(props) {
+export const fetchUserDetails = (props) => {
   return (dispatch) => {
     dispatch({ type: "LOADING" });
     return fetch(`http://localhost:3000/api/users/${props.userId}`)
