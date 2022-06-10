@@ -57,10 +57,12 @@ export class UserForm extends Component {
         </p>
         <input type="submit" className="ui inverted yellow button" />
       </form>
-         <h3 id="id">''</h3>
-         <h3 id="email">""</h3>
-         <h3 id="username">""</h3>
-         <h3 id="user_id">""</h3>
+        <div>
+          <h3 id='id'></h3>
+          <h3 id="email"></h3>
+          <h3 id="username"></h3>
+          <h3 id="user_id"></h3>
+        </div>
       </div>
     );
   }
