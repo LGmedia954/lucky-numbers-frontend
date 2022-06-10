@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addUser } from '../actions/users';
-
+import { showId, showEmail, showUsername, showUserId } from '../actions/users';
 export class UserForm extends Component {
 
   state = {
@@ -24,7 +24,11 @@ export class UserForm extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     this.props.addUser(this.state);
-    console.log(this.state)
+    showId();
+    showEmail();
+    showUsername();
+    showUserId();
+    // console.log(this.state)
      // clear form
     this.setState({
       email: '',
@@ -36,7 +40,7 @@ export class UserForm extends Component {
     return(
       <div className="viewable">
       <h2>SIGN IN</h2>
-      <form className="ui small form" onSubmit={(event) => this.handleOnSubmit(event)}>
+      <form id="userForm" className="ui small form" onSubmit={(event) => this.handleOnSubmit(event)}>
         <p>
           <input className="ui small input"
             type="text" name="email" id="email" placeholder="Email"
@@ -52,7 +56,11 @@ export class UserForm extends Component {
             />      
         </p>
         <input type="submit" className="ui inverted yellow button" />
-       </form>
+      </form>
+         <h3 id="id">''</h3>
+         <h3 id="email">""</h3>
+         <h3 id="username">""</h3>
+         <h3 id="user_id">""</h3>
       </div>
     );
   }

@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from "react-redux";
 import { addRound } from "../actions/rounds";
 import { v4 as uuidv4 } from 'uuid';
-
 class RoundForm extends React.Component { 
   constructor(props) {
     super(props);
@@ -76,7 +75,7 @@ class RoundForm extends React.Component {
     return (
       <div>
         <h2>Save Your Round!</h2>
-        <form className="ui tiny form" onSubmit={this.handleOnSubmit}>
+        <form id="roundForm" className="ui tiny form" onSubmit={this.handleOnSubmit}>
           <div>
             <input className="ui small input"
               type="text" name="title" id="title" placeholder="Game Title"
