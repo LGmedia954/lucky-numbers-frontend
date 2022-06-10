@@ -49,3 +49,5 @@ connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
 // const mapStateToProps = ({ users }) => ({ users })
 
 // const mapDispatchToProps = dispatch => ({ addUser: user => dispatch({ type: "ADD_USER", user }) })
+
+// export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
