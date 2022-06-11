@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUser } from '../actions/users';
+import { addUser, findUser, fetchUserDetails } from '../actions/users';
 import { showId, showEmail, showUsername, showUserId } from '../actions/utility';
 export class UserForm extends Component {
 
@@ -58,7 +58,15 @@ export class UserForm extends Component {
   }
 };
 
-export default connect(null, { addUser })(UserForm);
+// Object Shorthand Form​
+// mapDispatchToProps may be an object where each field is an action creator.
+const mapDispatchToProps = {
+  addUser,
+  findUser,
+  fetchUserDetails,
+}
+
+export default connect(null, mapDispatchToProps)(UserForm);
 
 
 
@@ -67,6 +75,12 @@ export default connect(null, { addUser })(UserForm);
 //   const id = ownProps.params.id;
 //   return { id };
 // };
+
+
+
+// const mapStateToProps = (state, ownProps) => ({
+  // user: state.users[ownProps.id],
+// })
 
 
 
@@ -95,12 +109,3 @@ export default connect(null, { addUser })(UserForm);
 // function mapDispatchToProps(dispatch) {
 //   return { actions: bindActionCreators(actions, dispatch) }
 // }
-
-
-
-// {/* <div>
-// <h3 id='id'></h3>
-// <h3 id="email"></h3>
-// <h3 id="username"></h3>
-// <h3 id="user_id"></h3>
-// </div> */}

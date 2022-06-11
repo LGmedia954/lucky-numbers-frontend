@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { addRound } from "../actions/rounds";
-class RoundForm extends React.Component { 
+class RoundForm extends React.Component {
   
   state = {
     title: '',
@@ -58,7 +58,7 @@ class RoundForm extends React.Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addRound(this.state, this.state.user_id)
+    this.props.addRound(this.state, this.state.id, this.state.user_id)
     console.log(this.state)
   }
 
@@ -120,6 +120,10 @@ export default connect(null, { addRound })(RoundForm);
 
 
 
+// Dan Abramov thread
+// connect(mapStateToProps, mapEmptyToProps)(connect(mapStateToProps, mapDispatchToProps)(MyComponent))
+// connect(mapStateToProps, {})(connect(null, { addRound })(RoundForm))
+
 
 
 // Alternative forms:
@@ -133,7 +137,7 @@ export default connect(null, { addRound })(RoundForm);
 //   }
 // }
 
-// export default connect(null, mapDispatchToProps)(UserForm);
+// export default connect(null, mapDispatchToProps)(RoundForm);
 
 
 
@@ -175,5 +179,3 @@ export default connect(null, { addRound })(RoundForm);
 //   };
 //   this.handleOnSubmit = this.handleOnSubmit.bind(this);
 // }
-
-// , user_id:JSON.parse(localStorage.getItem('id'))

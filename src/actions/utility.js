@@ -25,3 +25,10 @@ export const showUserId = (id) => {
 // showEmail(this.state.email);
 // showUsername(this.state.username);
 // showUserId(this.state.id);
+
+// {/* <div>
+// <h3 id='id'></h3>
+// <h3 id="email"></h3>
+// <h3 id="username"></h3>
+// <h3 id="user_id"></h3>
+// </div> */}
