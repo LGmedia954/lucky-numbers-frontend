@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addUser, findUser, fetchUserDetails } from '../actions/users';
-import { showId, showEmail, showUsername, showUserId } from '../actions/utility';
 export class UserForm extends Component {
 
   state = {

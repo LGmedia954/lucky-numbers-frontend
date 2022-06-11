@@ -32,3 +32,5 @@ export const showUserId = (id) => {
 // <h3 id="username"></h3>
 // <h3 id="user_id"></h3>
 // </div> */}
+
+// import { showId, showEmail, showUsername, showUserId } from '../actions/utility';
