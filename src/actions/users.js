@@ -16,6 +16,19 @@ export const getUsers = () => {
   };
 };
 
+
+      // .then((resp) => resp.json())
+      // .then((users) => {
+      //   users.forEach(user => {
+      //     const userMarkup = `
+      //     <div> data-id=${user.id}>
+      //       <h3>${user.email}</h3>
+      //       <h3>${user.username}</h3>
+      //     </div><br><br>`;
+      //     document.querySelector('#user-container').innerHTML += userMarkup
+      //   })
+
+
 export const addUser = (user) => {
   return (dispatch) => {
     fetch("http://localhost:3000/api/v1/users", {
@@ -28,6 +41,14 @@ export const addUser = (user) => {
     })
       .then((resp) => resp.json())
       .then((user) => {
+        // user.data.at(user => {
+        //   const userMarkup = `
+        //   <div> data-id=${user.id}>
+        //   <h3>${user.arributes.email}</h3>
+        //   <h3>${user.arributes.username}</h3>
+        //   </div><br><br>`;
+        //   document.querySelector('#scribe-user').innerHTML += userMarkup
+        // })
         localStorage.setItem('id', JSON.stringify(user));
         dispatch({ type: "ADD_USER", user });
         dispatch(getUsers());
