@@ -1,29 +1,3 @@
-// This detected ids
-// if(JSON.stringify(users).indexOf("id") > -1 ) {
-//   console.log("Id Found");
-// }
-// else{
-//   console.log("Id not Found");
-// }
-
-// export const getUsers = () => {
-//   return (dispatch) => {
-//     dispatch({ type: "LOADING" });
-//     fetch("http://localhost:3000/api/v1/users", {
-//       method: "GET",
-//       headers: {
-//         Accept: "application/json",
-//         "Content-Type": "application/json",
-//       },
-//     })
-//       .then((resp) => resp.json())
-//       .then((users) => {
-//         console.log(users)
-//         dispatch({ type: "SET_USERS", users })
-//       });
-//   };
-// };
-
 export const getUsers = () => {
   return (dispatch) => {
     dispatch({ type: "LOADING" });
@@ -36,26 +10,13 @@ export const getUsers = () => {
     })
       .then((resp) => resp.json())
       .then((users) => {
-        var userHash = [] 
-        var keys = [];
-        var values = [];
-        
-        for (var i = 0; i < userHash.length; i++) {
-            for (var key in userHash[i]) {
-                if (userHash[i].hasOwnProperty(key)) {
-                    keys.push(key);
-                    values.push(userHash[i][key]);
-                }
-            }
-        }
-        
-        console.log(keys);
-        console.log(values);
         console.log(users)
         dispatch({ type: "SET_USERS", users })
       });
   };
 };
+
+
 
 // export const addUser = (user) => {
 //   return (dispatch) => {
@@ -137,3 +98,13 @@ export const fetchUserDetails = (props) => {
 // }
 //   render() {
   // const userDetails = this.props.userDetails
+
+
+
+// This detected ids
+// if(JSON.stringify(users).indexOf("id") > -1 ) {
+//   console.log("Id Found");
+// }
+// else{
+//   console.log("Id not Found");
+// }
