@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
-import { fetchUserDetails } from "../actions/rounds";
 import { addRound } from "../actions/rounds";
 class RoundForm extends React.Component {
-
-  componentDidMount() {
-    this.props.fetchUserDetails();
-  }
   
   state = {
     title: '',
@@ -154,7 +149,7 @@ export default connect(null, { addRound })(RoundForm);
 // };
 
 // <div>
-//   <input type="hidden" name="user_id" id="userId" 
+//   <input type="hidden" name="user_id" 
 //   value={this.state.user_id} onChange={this.handleUserIdHidden}/>
 // </div>
 
@@ -162,8 +157,8 @@ export default connect(null, { addRound })(RoundForm);
 
   // componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
-  //   if (this.props.userID !== prevProps.userID) {
-  //     this.fetchData(this.props.userID);
+  //   if (this.props.user.id !== prevProps.user.id) {
+  //     this.fetchData(this.props.user.id);
   //   }
   // }
   // You may call setState() immediately in componentDidUpdate() 

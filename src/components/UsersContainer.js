@@ -46,7 +46,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
 
 
 // const mapStateToProps = (state) => {
-//   return { userId: state.user.id }
+//   return { id: state.user.id }
 // }
 
 // const mapDispatchToProps = (dispatch) => {

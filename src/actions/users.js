@@ -70,8 +70,8 @@ export const findUser = (id) => {
     })
       .then((resp) => resp.json())
       .then((user) => {
-        console.log(user)
         dispatch({ type: "FIND_USER", user });
+        console.log(user)
       });
   };
 };
@@ -80,7 +80,7 @@ export const findUser = (id) => {
 export const fetchUserDetails = (props) => {
   return (dispatch) => {
     dispatch({ type: "LOADING" });
-    return fetch(`http://localhost:3000/api/users/${props.userId}`)
+    return fetch(`http://localhost:3000/api/users/${props.user.id}`)
       .then(resp => resp.json())
       .then(user => dispatch({
         type: 'FETCH_USER_DETAILS',
