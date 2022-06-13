@@ -1,3 +1,29 @@
+// This detected ids
+// if(JSON.stringify(users).indexOf("id") > -1 ) {
+//   console.log("Id Found");
+// }
+// else{
+//   console.log("Id not Found");
+// }
+
+// export const getUsers = () => {
+//   return (dispatch) => {
+//     dispatch({ type: "LOADING" });
+//     fetch("http://localhost:3000/api/v1/users", {
+//       method: "GET",
+//       headers: {
+//         Accept: "application/json",
+//         "Content-Type": "application/json",
+//       },
+//     })
+//       .then((resp) => resp.json())
+//       .then((users) => {
+//         console.log(users)
+//         dispatch({ type: "SET_USERS", users })
+//       });
+//   };
+// };
+
 export const getUsers = () => {
   return (dispatch) => {
     dispatch({ type: "LOADING" });
@@ -10,24 +36,45 @@ export const getUsers = () => {
     })
       .then((resp) => resp.json())
       .then((users) => {
+        var userHash = [] 
+        var keys = [];
+        var values = [];
+        
+        for (var i = 0; i < userHash.length; i++) {
+            for (var key in userHash[i]) {
+                if (userHash[i].hasOwnProperty(key)) {
+                    keys.push(key);
+                    values.push(userHash[i][key]);
+                }
+            }
+        }
+        
+        console.log(keys);
+        console.log(values);
         console.log(users)
         dispatch({ type: "SET_USERS", users })
       });
   };
 };
 
-
-      // .then((resp) => resp.json())
-      // .then((users) => {
-      //   users.forEach(user => {
-      //     const userMarkup = `
-      //     <div> data-id=${user.id}>
-      //       <h3>${user.email}</h3>
-      //       <h3>${user.username}</h3>
-      //     </div><br><br>`;
-      //     document.querySelector('#user-container').innerHTML += userMarkup
-      //   })
-
+// export const addUser = (user) => {
+//   return (dispatch) => {
+//     fetch("http://localhost:3000/api/v1/users", {
+//       method: "POST",
+//       headers: {
+//         Accept: "application/json",
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({ user }),
+//     })
+//       .then((resp) => resp.json())
+//       .then((user) => {
+//         localStorage.setItem('id', JSON.stringify(user));
+//         dispatch({ type: "ADD_USER", user });
+//         dispatch(getUsers());
+//       });
+//   };
+// };
 
 export const addUser = (user) => {
   return (dispatch) => {
@@ -37,24 +84,21 @@ export const addUser = (user) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ user }),
-    })
+      body: JSON.stringify({user: {
+        id: user.id,
+        email: user.email,
+        username: user.username
+      }})
+    }
       .then((resp) => resp.json())
       .then((user) => {
-        // user.data.at(user => {
-        //   const userMarkup = `
-        //   <div> data-id=${user.id}>
-        //   <h3>${user.arributes.email}</h3>
-        //   <h3>${user.arributes.username}</h3>
-        //   </div><br><br>`;
-        //   document.querySelector('#scribe-user').innerHTML += userMarkup
-        // })
         localStorage.setItem('id', JSON.stringify(user));
         dispatch({ type: "ADD_USER", user });
         dispatch(getUsers());
-      });
-  };
-};
+      })
+    )
+  }
+}
 
 export const findUser = (id) => {
   return (dispatch) => {

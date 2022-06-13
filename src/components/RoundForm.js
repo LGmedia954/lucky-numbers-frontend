@@ -58,7 +58,7 @@ class RoundForm extends React.Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addRound(this.state, this.state.id, this.state.user_id)
+    this.props.addRound(this.state, this.state.user_id)
     console.log(this.state)
   }
 
