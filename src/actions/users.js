@@ -16,8 +16,6 @@ export const getUsers = () => {
   };
 };
 
-
-
 // export const addUser = (user) => {
 //   return (dispatch) => {
 //     fetch("http://localhost:3000/api/v1/users", {
@@ -45,19 +43,18 @@ export const addUser = (user) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({user: {
+      body: JSON.stringify({ user: {
         id: user.id,
         email: user.email,
         username: user.username
       }})
-    }
+    })
       .then((resp) => resp.json())
       .then((user) => {
         localStorage.setItem('id', JSON.stringify(user));
         dispatch({ type: "ADD_USER", user });
         dispatch(getUsers());
-      })
-    )
+      });
   }
 }
 
@@ -92,7 +89,7 @@ export const fetchUserDetails = (props) => {
   }
 }
 
-// for above
+// example for above
 // componentDidMount() {
 //   this.props.actions.fetchUserDetails(this.props)
 // }

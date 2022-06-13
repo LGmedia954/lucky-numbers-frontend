@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from "react-redux";
+import { fetchUserDetails } from "../actions/rounds";
 import { addRound } from "../actions/rounds";
 class RoundForm extends React.Component {
+
+  componentDidMount() {
+    this.props.fetchUserDetails();
+  }
   
   state = {
     title: '',
@@ -56,7 +61,7 @@ class RoundForm extends React.Component {
     });
   };
 
-  handleOnSubmit = event => {
+  handleOnSubmit = async event => {
     event.preventDefault();
     this.props.addRound(this.state, this.state.user_id)
     console.log(this.state)
@@ -117,12 +122,13 @@ class RoundForm extends React.Component {
 }
 
 export default connect(null, { addRound })(RoundForm);
+// connect({ fetchUserDetails }, {})(connect(null, { addRound })(RoundForm))
 
 
 
 // Dan Abramov thread
 // connect(mapStateToProps, mapEmptyToProps)(connect(mapStateToProps, mapDispatchToProps)(MyComponent))
-// connect(mapStateToProps, {})(connect(null, { addRound })(RoundForm))
+// connect({ fetchUserDetails }, {})(connect(null, { addRound })(RoundForm))
 
 
 

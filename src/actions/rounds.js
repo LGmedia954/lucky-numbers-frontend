@@ -31,6 +31,7 @@ export const addRound = (round, userId) => {
       .then((round) => {
         dispatch({ type: "ADD_ROUND", round });
         console.log(round)
+        dispatch(getRounds());
       });
   };
 };
@@ -57,7 +58,7 @@ export const findUserRound = (userId, roundId) => {
 
 // export const deleteUserRound = (id, round) => {
 //   return (dispatch) => {
-//     fetch(`http://localhost:3000/api/v1/users/${id}/rounds/${round}`, {
+//     fetch(`http://localhost:3000/api/v1/users/${userId}/rounds/${roundId}`, {
 //       method: "DELETE",
 //       headers: {
 //         Accept: "application/json",
