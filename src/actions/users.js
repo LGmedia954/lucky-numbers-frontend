@@ -16,25 +16,6 @@ export const getUsers = () => {
   };
 };
 
-// export const addUser = (user) => {
-//   return (dispatch) => {
-//     fetch("http://localhost:3000/api/v1/users", {
-//       method: "POST",
-//       headers: {
-//         Accept: "application/json",
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({ user }),
-//     })
-//       .then((resp) => resp.json())
-//       .then((user) => {
-//         localStorage.setItem('id', JSON.stringify(user));
-//         dispatch({ type: "ADD_USER", user });
-//         dispatch(getUsers());
-//       });
-//   };
-// };
-
 export const addUser = (user) => {
   return (dispatch) => {
     fetch("http://localhost:3000/api/v1/users", {
@@ -43,20 +24,42 @@ export const addUser = (user) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ user: {
-        id: user.id,
-        email: user.email,
-        username: user.username
-      }})
+      body: JSON.stringify({ user }),
     })
       .then((resp) => resp.json())
       .then((user) => {
-        localStorage.setItem('id', JSON.stringify(user));
+        console.log(user);
+        // localStorage.setItem('id', JSON.stringify(user));
+        localStorage.setItem('id', JSON.stringify(user["id"]))
         dispatch({ type: "ADD_USER", user });
+        console.log(user);
         dispatch(getUsers());
       });
-  }
-}
+  };
+};
+
+// export const addUser = (user) => {
+//   return (dispatch) => {
+//     fetch("http://localhost:3000/api/v1/users", {
+//       method: "POST",
+//       headers: {
+//         Accept: "application/json",
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({ user: {
+//         id: user.id,
+//         email: user.email,
+//         username: user.username
+//       }})
+//     })
+//       .then((resp) => resp.json())
+//       .then((user) => {
+//         localStorage.setItem('id', JSON.stringify(user));
+//         dispatch({ type: "ADD_USER", user });
+//         dispatch(getUsers());
+//       });
+//   }
+// }
 
 export const findUser = (id) => {
   return (dispatch) => {
@@ -89,7 +92,7 @@ export const fetchUserDetails = (props) => {
   }
 }
 
-// example for above
+// example for above but this was for different purpose
 // componentDidMount() {
 //   this.props.actions.fetchUserDetails(this.props)
 // }
