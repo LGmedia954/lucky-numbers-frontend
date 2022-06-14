@@ -28,9 +28,10 @@ export const addUser = (user) => {
     })
       .then((resp) => resp.json())
       .then((user) => {
-        console.log(user);
         // localStorage.setItem('id', JSON.stringify(user));
-        localStorage.setItem('id', JSON.stringify(user["id"]))
+        // localStorage.setItem('id', JSON.stringify(user["data"]["id"]))
+        localStorage.setItem('id', user["data"]["id"])
+        debugger
         dispatch({ type: "ADD_USER", user });
         console.log(user);
         dispatch(getUsers());
