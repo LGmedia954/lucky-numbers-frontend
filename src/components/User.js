@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 export class User extends Component {
   
   render() {
@@ -13,6 +14,25 @@ export class User extends Component {
 }
 
 export default User;
+
+
+
+// import React, { Component } from "react";
+
+// export class User extends Component {
+
+//     Users && Users.lastIndexOf( user => {
+//       return(
+//         <div className="viewable" key={ user.id }>
+//           <h2>Good Luck { user.username }!</h2>
+//           <p className="loot">&#128176;</p>     
+//         </div>
+//       )}
+//     )
+
+// };
+
+// export default User;
 
 
    

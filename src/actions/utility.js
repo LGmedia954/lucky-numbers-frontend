@@ -1,3 +1,40 @@
+// "use strict";
+
+export const findUserData = () => {
+
+  let userRequest = new Request("http://localhost:3000/api/v1/users")
+
+  fetch (userRequest)
+    .then(function(resp) {
+      return resp.json();
+    })
+    .then(function(data) {
+      console.log(data.users);
+    })
+
+}
+
+export const findRoundData = () => {
+
+  let roundRequest = new Request("http://localhost:3000/api/v1/rounds")
+  
+  fetch (roundRequest)
+    .then(function(resp) {
+      return resp.json();
+    })
+    .then(function(data) {
+      console.log(data.users);
+    })
+  
+}
+
+// import { findUserData } from "./actions/utility";
+// import { findRoundData } from "./actions/utility";
+
+
+
+
+
 // This worked to obtain keys and values from test hash
 
 //   var userHash = [
