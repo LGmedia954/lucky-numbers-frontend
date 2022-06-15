@@ -74,7 +74,7 @@ export const showUser = (id) => {
       .then((resp) => resp.json())
       .then((user) => {
         dispatch({ type: "SHOW_USER", user });
-        localStorage.getItem('id', user["data"]["id"])
+        localStorage.getItem('id', user["data"]["username"])
         console.log(user)
       });
   };

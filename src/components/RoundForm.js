@@ -56,10 +56,20 @@ class RoundForm extends React.Component {
     });
   };
 
-  handleOnSubmit = async event => {
+  handleOnSubmit = event => {
     event.preventDefault();
     this.props.addRound(this.state, this.state.user_id)
     console.log(this.state)
+    // clear form
+    this.setState({
+      title: '',
+      pick_one: '',
+      pick_two: '',
+      pick_three: '',
+      pick_four: '',
+      pick_five: '',
+      pick_six: ''
+    })
   }
 
   render() {

@@ -29,6 +29,8 @@ export const addRound = (round, id) => {
     })
       .then((resp) => resp.json())
       .then((round) => {
+        localStorage.setItem('id', round["data"]["id"])
+        debugger
         dispatch({ type: "ADD_ROUND", round });
         console.log(round)
         dispatch(getRounds());
@@ -47,9 +49,9 @@ export const showUserRound = (id, round) => {
       },
     })
       .then((resp) => resp.json())
-      .then((round) => {
-        console.log(round)
+      .then((round) => {     
         dispatch({ type: "SHOW_USER_ROUND", round });
+        console.log(round)
       });
   };
 };

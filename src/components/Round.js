@@ -3,17 +3,17 @@ import React, { Component } from "react";
 export class Round extends Component {
   
   render() {
-    const { title, pick_one, pick_two, pick_three, pick_four, pick_five, pick_six } = this.props.round.id;
+    // const { title, pick_one, pick_two, pick_three, pick_four, pick_five, pick_six } = this.props;
     return (
       <div className="viewable">
         <h2>
-          {title} &nbsp;&nbsp;
-          {pick_one} &bull;&nbsp;&nbsp;
-          {pick_two} &bull;&nbsp;&nbsp;
-          {pick_three} &bull;&nbsp;&nbsp;
-          {pick_four} &bull;&nbsp;&nbsp;
-          {pick_five} &bull;&nbsp;&nbsp;
-          {pick_six}
+          {this.props.title} &nbsp;&nbsp;
+          {this.props.pick_one} &bull;&nbsp;&nbsp;
+          {this.props.pick_two} &bull;&nbsp;&nbsp;
+          {this.props.pick_three} &bull;&nbsp;&nbsp;
+          {this.props.pick_four} &bull;&nbsp;&nbsp;
+          {this.props.pick_five} &bull;&nbsp;&nbsp;
+          {this.props.pick_six}
         </h2>
       </div>
     );
