@@ -28,14 +28,14 @@ const users = (state = initialState, action) => {
         // with all of the old users, and the new user object
           ...state.users, action.user],
       };
-    case "FIND_USER":
+    case "SHOW_USER":
       return {
         ...state,
         users: [...state.users.slice(-1)]
       };
     // frontend difficulty recognizing the user
     case "FETCH_USER_DETAILS":
-      debugger
+      // debugger
       return {
         id: action.user.id,
         email: action.user.email,

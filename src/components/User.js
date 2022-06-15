@@ -1,38 +1,19 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export class User extends Component {
   
   render() {
-    const { username } = this.props;
+    // const { username } = this.props;
     return (
       <div className="viewable">
-        <h2>Good Luck {username}!</h2>
-        <p className="loot">&#128176;</p>
+        <h2>Good Luck {this.props.username}!</h2>
+        <p className="cash">&#128181;</p>
       </div>      
     );
   }
 }
 
 export default User;
-
-
-
-// import React, { Component } from "react";
-
-// export class User extends Component {
-
-//     Users && Users.lastIndexOf( user => {
-//       return(
-//         <div className="viewable" key={ user.id }>
-//           <h2>Good Luck { user.username }!</h2>
-//           <p className="loot">&#128176;</p>     
-//         </div>
-//       )}
-//     )
-
-// };
-
-// export default User;
 
 
    

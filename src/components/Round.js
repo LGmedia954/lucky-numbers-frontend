@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export class Round extends Component {
   
   render() {
-    const { title, pick_one, pick_two, pick_three, pick_four, pick_five, pick_six } = this.props;
+    const { title, pick_one, pick_two, pick_three, pick_four, pick_five, pick_six } = this.props.round.id;
     return (
       <div className="viewable">
         <h2>

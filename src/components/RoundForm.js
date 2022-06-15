@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from "react-redux";
 import { addRound } from "../actions/rounds";
 class RoundForm extends React.Component {
@@ -139,19 +139,6 @@ export default connect(null, { addRound })(RoundForm);
 // }
 
 // export default connect(null, mapDispatchToProps)(RoundForm);
-
-
-
-// handleUserIdHidden = event => {
-//   this.setState({
-//     user_id: event.target.value,
-//   });
-// };
-
-// <div>
-//   <input type="hidden" name="user_id" 
-//   value={this.state.user_id} onChange={this.handleUserIdHidden}/>
-// </div>
 
 
 

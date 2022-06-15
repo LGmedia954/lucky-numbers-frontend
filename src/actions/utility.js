@@ -1,32 +1,32 @@
 // "use strict";
 
-export const findUserData = () => {
+// export const findUserData = () => {
 
-  let userRequest = new Request("http://localhost:3000/api/v1/users")
+//   let userRequest = new Request("http://localhost:3000/api/v1/users")
 
-  fetch (userRequest)
-    .then(function(resp) {
-      return resp.json();
-    })
-    .then(function(data) {
-      console.log(data.users);
-    })
+//   fetch (userRequest)
+//     .then(function(resp) {
+//       return resp.json();
+//     })
+//     .then(function(data) {
+//       console.log(data.users);
+//     })
 
-}
+// }
 
-export const findRoundData = () => {
+// export const findRoundData = () => {
 
-  let roundRequest = new Request("http://localhost:3000/api/v1/rounds")
+//   let roundRequest = new Request("http://localhost:3000/api/v1/rounds")
   
-  fetch (roundRequest)
-    .then(function(resp) {
-      return resp.json();
-    })
-    .then(function(data) {
-      console.log(data.users);
-    })
+//   fetch (roundRequest)
+//     .then(function(resp) {
+//       return resp.json();
+//     })
+//     .then(function(data) {
+//       console.log(data.users);
+//     })
   
-}
+// }
 
 // import { findUserData } from "./actions/utility";
 // import { findRoundData } from "./actions/utility";
@@ -67,9 +67,9 @@ export const findRoundData = () => {
 
 
 // https://stackoverflow.com/questions/15523514/find-by-key-deep-in-a-nested-array
-// if( JSON.stringify(object_name).indexOf("key_name") > -1 ) {
-//   console.log("Key Found");
+// if(JSON.stringify(users).indexOf("id") > -1 ) {
+//   console.log("Id Found");
 // }
 // else{
-//   console.log("Key not Found");
+//   console.log("Id not Found");
 // }

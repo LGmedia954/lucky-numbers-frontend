@@ -31,9 +31,8 @@ export const addUser = (user) => {
         // localStorage.setItem('id', JSON.stringify(user));
         // localStorage.setItem('id', JSON.stringify(user["data"]["id"]))
         localStorage.setItem('id', user["data"]["id"])
-        debugger
+        // debugger
         dispatch({ type: "ADD_USER", user });
-        console.log(user);
         dispatch(getUsers());
       });
   };
@@ -62,7 +61,7 @@ export const addUser = (user) => {
 //   }
 // }
 
-export const findUser = (id) => {
+export const showUser = (id) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${id}`, {
       method: "GET",
@@ -74,7 +73,8 @@ export const findUser = (id) => {
     })
       .then((resp) => resp.json())
       .then((user) => {
-        dispatch({ type: "FIND_USER", user });
+        dispatch({ type: "SHOW_USER", user });
+        localStorage.getItem('id', user["data"]["id"])
         console.log(user)
       });
   };
@@ -84,14 +84,16 @@ export const findUser = (id) => {
 export const fetchUserDetails = (props) => {
   return (dispatch) => {
     dispatch({ type: "LOADING" });
-    return fetch(`http://localhost:3000/api/users/${props.user.id}`)
-      .then(resp => resp.json())
-      .then(user => dispatch({
-        type: 'FETCH_USER_DETAILS',
-        user: user
-      }))
-  }
-}
+    fetch(`http://localhost:3000/api/users/${props.user.id}`)
+      .then((resp) => resp.json())
+      .then((user) => {
+        dispatch({ type: "FETCH_USER_DETAILS", user });
+        console.log(user)
+      });
+  };
+};
+
+
 
 // example for above but this was for different purpose
 // componentDidMount() {
@@ -100,12 +102,3 @@ export const fetchUserDetails = (props) => {
 //   render() {
   // const userDetails = this.props.userDetails
 
-
-
-// This detected ids
-// if(JSON.stringify(users).indexOf("id") > -1 ) {
-//   console.log("Id Found");
-// }
-// else{
-//   console.log("Id not Found");
-// }

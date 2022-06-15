@@ -21,7 +21,7 @@ const rounds = (state = initialState, action) => {
         ...state,
         rounds: [...state.rounds, action.round],
       };
-    case "FIND_USER_ROUND":
+    case "SHOW_USER_ROUND":
       return {
         ...state,
         rounds: [...state.rounds.slice(-1)],

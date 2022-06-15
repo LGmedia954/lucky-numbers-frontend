@@ -36,7 +36,7 @@ export const addRound = (round, id) => {
   };
 };
 
-export const findUserRound = (id, round) => {
+export const showUserRound = (id, round) => {
   return (dispatch) => {
     // /api/v1/users/:user_id/rounds/:id(.:format)
     fetch(`http://localhost:3000/api/v1/users/${id}/rounds/${round}`, {
@@ -49,7 +49,7 @@ export const findUserRound = (id, round) => {
       .then((resp) => resp.json())
       .then((round) => {
         console.log(round)
-        dispatch({ type: "FIND_USER_ROUND", round });
+        dispatch({ type: "SHOW_USER_ROUND", round });
       });
   };
 };
