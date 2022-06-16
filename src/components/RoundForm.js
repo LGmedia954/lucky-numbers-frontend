@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { addRound } from "../actions/rounds";
+import { addRound, showUserRound } from "../actions/rounds";
 class RoundForm extends React.Component {
   
   state = {
@@ -126,8 +126,14 @@ class RoundForm extends React.Component {
   }
 }
 
-export default connect(null, { addRound })(RoundForm);
-// connect({ fetchUserDetails }, {})(connect(null, { addRound })(RoundForm))
+// Object Shorthand Form​
+// mapDispatchToProps may be an object where each field is an action creator.
+const mapDispatchToProps = {
+  addRound,
+  showUserRound
+}
+
+export default connect(null, mapDispatchToProps)(RoundForm);
 
 
 

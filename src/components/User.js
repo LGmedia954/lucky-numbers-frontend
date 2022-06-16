@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export class User extends Component {
+export class User extends React.Component {
   
   render() {
     // const { username } = this.props;

@@ -15,7 +15,7 @@ const Rounds = props => {
 
   return (
     <div className="viewable">
-      <h2 id="roundList">{rounds}</h2>
+      <h3 id="roundList">{rounds}</h3>
     </div>
   );
 };

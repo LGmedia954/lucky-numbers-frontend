@@ -16,7 +16,7 @@
 
 [X] Use of Rails API backend to persist data for the application.
 
-[ ] Good understanding of the react/redux state flow.
+[X] Good understanding of the react/redux state flow.
 
 [ ] Good understanding of state and props in React.
 

@@ -33,6 +33,7 @@ export const addUser = (user) => {
         localStorage.setItem('id', user["data"]["id"])
         // debugger
         dispatch({ type: "ADD_USER", user });
+        console.log(user);
         dispatch(getUsers());
       });
   };
@@ -73,9 +74,9 @@ export const showUser = (id) => {
     })
       .then((resp) => resp.json())
       .then((user) => {
+        // localStorage.setItem('id', user["data"]["attributes"][2])
+        debugger
         dispatch({ type: "SHOW_USER", user });
-        localStorage.getItem('id', user["data"]["attributes"][2])
-        console.log(user)
       });
   };
 };
@@ -87,8 +88,8 @@ export const fetchUserDetails = (props) => {
     fetch(`http://localhost:3000/api/users/${props.user.id}`)
       .then((resp) => resp.json())
       .then((user) => {
+        // debugger
         dispatch({ type: "FETCH_USER_DETAILS", user });
-        console.log(user)
       });
   };
 };

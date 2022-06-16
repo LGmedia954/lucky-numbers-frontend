@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 
-export class Round extends Component {
+export class Round extends React.Component {
   
   render() {
     // const { title, pick_one, pick_two, pick_three, pick_four, pick_five, pick_six } = this.props;
