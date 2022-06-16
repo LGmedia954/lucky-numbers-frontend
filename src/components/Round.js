@@ -1,9 +1,10 @@
-import React from "react";
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actions from '../actions/users'
 
-export class Round extends React.Component {
-  
+class Round extends Component {
   render() {
-    // const { title, pick_one, pick_two, pick_three, pick_four, pick_five, pick_six } = this.props;
     return (
       <div className="viewable">
         <h2>
@@ -20,7 +21,43 @@ export class Round extends React.Component {
   }
 }
 
-export default Round;
+const mapStateToProps = ({ rounds }) => ({ rounds })
+
+const mapDispatchToProps = (dispatch) => {
+  return { actions: bindActionCreators(actions, dispatch) }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Round)
+
+
+
+
+
+// import React from "react";
+
+// export class Round extends React.Component {
+  
+//   render() {
+//     // const { title, pick_one, pick_two, pick_three, pick_four, pick_five, pick_six } = this.props;
+//     return (
+//       <div className="viewable">
+//         <h2>
+//           {this.props.title} &nbsp;&nbsp;
+//           {this.props.pick_one} &bull;&nbsp;&nbsp;
+//           {this.props.pick_two} &bull;&nbsp;&nbsp;
+//           {this.props.pick_three} &bull;&nbsp;&nbsp;
+//           {this.props.pick_four} &bull;&nbsp;&nbsp;
+//           {this.props.pick_five} &bull;&nbsp;&nbsp;
+//           {this.props.pick_six}
+//         </h2>
+//       </div>
+//     );
+//   }
+// }
+
+// export default Round;
+
+
 
 
 

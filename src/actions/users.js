@@ -39,29 +39,6 @@ export const addUser = (user) => {
   };
 };
 
-// export const addUser = (user) => {
-//   return (dispatch) => {
-//     fetch("http://localhost:3000/api/v1/users", {
-//       method: "POST",
-//       headers: {
-//         Accept: "application/json",
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({ user: {
-//         id: user.id,
-//         email: user.email,
-//         username: user.username
-//       }})
-//     })
-//       .then((resp) => resp.json())
-//       .then((user) => {
-//         localStorage.setItem('id', JSON.stringify(user));
-//         dispatch({ type: "ADD_USER", user });
-//         dispatch(getUsers());
-//       });
-//   }
-// }
-
 export const showUser = (id) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/users/${id}`, {
@@ -100,5 +77,5 @@ export const fetchUserDetails = (props) => {
 //   this.props.actions.fetchUserDetails(this.props)
 // }
 //   render() {
-  // const userDetails = this.props.userDetails
+// const userDetails = this.props.userDetails
 

@@ -58,25 +58,7 @@ export const showUserRound = (id, roundId) => {
 
 
 
-// export const deleteUserRound = (id, round) => {
-//   return (dispatch) => {
-//     fetch(`http://localhost:3000/api/v1/users/${id}/rounds/${round}`, {
-//       method: "DELETE",
-//       headers: {
-//         Accept: "application/json",
-//         "Content-Type": "application/json",
-//       },
-//     })
-//       .then((resp) => resp.json())
-//       .then((round) => {
-//         dispatch({ type: "DELETE_USER_ROUND", round });
-//       });
-//   };
-// };
-
-
-
-      // body: JSON.stringify({
-      //   user: id,
-      //   round: round
-      // })
+// body: JSON.stringify({
+//   user: id,
+//   round: round
+// })

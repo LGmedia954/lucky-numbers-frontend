@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actions from '../actions/users'
 
-export class User extends React.Component {
+class User extends Component {
   
   render() {
-    // const { username } = this.props;
     return (
       <div className="viewable">
+        {/* <User users={this.props.username}/> */}
         <h2>Good Luck {this.props.username}!</h2>
         <p className="cash">&#128181;</p>
       </div>      
@@ -13,7 +16,34 @@ export class User extends React.Component {
   }
 }
 
-export default User;
+const mapStateToProps = ({ user }) => ({ user })
+
+const mapDispatchToProps = (dispatch) => {
+  return { actions: bindActionCreators(actions, dispatch) }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(User)
+
+
+
+
+
+// import React from 'react';
+
+// export class User extends React.Component {
+  
+//   render() {
+//     // const { username } = this.props;
+//     return (
+//       <div className="viewable">
+//         <h2>Good Luck {this.props.username}!</h2>
+//         <p className="cash">&#128181;</p>
+//       </div>      
+//     );
+//   }
+// }
+
+// export default User;
 
 
    
