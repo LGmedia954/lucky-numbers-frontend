@@ -74,8 +74,7 @@ export const showUser = (id) => {
     })
       .then((resp) => resp.json())
       .then((user) => {
-        // localStorage.setItem('id', user["data"]["attributes"][2])
-        debugger
+        // debugger
         dispatch({ type: "SHOW_USER", user });
       });
   };

@@ -50,7 +50,6 @@ export const showUserRound = (id, roundId) => {
     })
       .then((resp) => resp.json())
       .then((round) => { 
-        // localStorage.setItem('id', round["data"]["id"]["attributes"])
        // debugger
         dispatch({ type: "SHOW_USER_ROUND", round });
       });
