@@ -18,6 +18,6 @@
 
 [X] Good understanding of the react/redux state flow.
 
-[ ] Good understanding of state and props in React.
+[X] Good understanding of state and props in React.
 
 [X] Knowledge of async JS with Promises.
