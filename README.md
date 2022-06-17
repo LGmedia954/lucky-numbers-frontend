@@ -6,11 +6,9 @@ Backend Repository: https://github.com/LGmedia954/lucky-numbers-backend
 
 # How To Use This Application
 
-To use this app, clone the Front End repository and run npm install to install Node dependencies. Then run npm start.
+Locate the Back End repository and run bundle install to install necessary gems. Run rake db:migrate to ready the database. Then run 'rails s' to launch the Rails server. JSON files may be viewed at http://localhost:3000.
 
-Clone the Back End repository and run bundle install to install necessary gems. Run rake db:migrate to ready the database.
-
-Run rake start to launch the client and API servers. Navigate to http://localhost:3001 to view the React app.
+To use this app, clone this Front End repository and run npm install to install Node dependencies. Then run npm start. Navigate to http://localhost:3001 to view the React app.
 
 # Project Requirements
 
