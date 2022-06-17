@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import * as actions from '../actions/users'
 
 class Round extends Component {
+
   render() {
     return (
       <div className="viewable">
@@ -23,9 +22,7 @@ class Round extends Component {
 
 const mapStateToProps = ({ round }) => ({ round })
 
-const mapDispatchToProps = (dispatch) => {
-  return { actions: bindActionCreators(actions, dispatch) }
-}
+const mapDispatchToProps = dispatch => ({ showUserRound: round => dispatch({ type: "SHOW_USER_ROUND", round }) })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Round)
 
