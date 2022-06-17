@@ -39,23 +39,23 @@ export const addRound = (round, id) => {
   };
 };
 
-// export const showUserRound = (id, roundId) => {
-//   return (dispatch) => {
-//     // /api/v1/users/:user_id/rounds/:id(.:format)
-//     fetch(`http://localhost:3000/api/v1/users/${id}/rounds/${roundId}`, {
-//       method: "GET",
-//       headers: {
-//         Accept: "application/json",
-//         "Content-Type": "application/json",
-//       },
-//     })
-//       .then((resp) => resp.json())
-//       .then((round) => { 
-//        // debugger
-//         dispatch({ type: "SHOW_USER_ROUND", round });
-//       });
-//   };
-// };
+export const showUserRound = (id, roundId) => {
+  return (dispatch) => {
+    // /api/v1/users/:user_id/rounds/:id(.:format)
+    fetch(`http://localhost:3000/api/v1/users/${id}/rounds/${roundId}`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((round) => { 
+       // debugger
+        dispatch({ type: "SHOW_USER_ROUND", round });
+      });
+  };
+};
 
 
 

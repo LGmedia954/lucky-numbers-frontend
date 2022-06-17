@@ -11,6 +11,7 @@ export class Home extends Component {
         <h3>2. Enter the name of your lottery.</h3>
         <h3>3. Pick up to 6 numbers.</h3>
         <h3>4. Save your round.</h3>
+        <h3>5. See your results.</h3>
         <>
         <Loot />
         </>

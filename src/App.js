@@ -9,7 +9,7 @@ import UserForm from "./components/UserForm";
 import UsersContainer from "./components/UsersContainer";
 import NewGameContainer from "./components/NewGameContainer";
 import RoundsContainer from "./components/RoundsContainer";
-// import ResultsContainer from "./components/ResultsContainer";
+import ResultsContainer from "./components/ResultsContainer";
 import Footer from "./components/Footer";
 import './index.css'
 
@@ -33,7 +33,7 @@ class App extends React.Component {
           <Route path="/users" element={<UsersContainer/>} />
           <Route path="/rounds/new" element={<NewGameContainer/>} />
           <Route path="/rounds" element={<RoundsContainer/>} />
-          {/* <Route path="/rounds/show" element={<ResultsContainer/>} /> */}
+          <Route path="/rounds/show" element={<ResultsContainer/>} />
         </Routes>
         <Footer/>
        </div>

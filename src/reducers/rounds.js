@@ -21,11 +21,6 @@ const rounds = (state = initialState, action) => {
         ...state,
         rounds: [...state.rounds, action.round],
       };
-    case "SHOW_USER_ROUND":
-      return {
-        ...state,
-        rounds: [...state.rounds.lastIndexOf(round => round.userId === action.user.id)]
-      };
 
     default:
       return state;
@@ -113,3 +108,12 @@ export default rounds;
 //     const id= getState().user.id;
 //     console.log(id)};
 // };
+
+
+
+// case "SHOW_USER_ROUND":
+//   return {
+//     ...state,
+//     // need to check
+//     rounds: [...state.rounds.reverse().find(round => round.userId === action.user.id)]
+//   };

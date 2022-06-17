@@ -28,18 +28,6 @@ const users = (state = initialState, action) => {
         // with all of the old users, and the new user object
           ...state.users, action.user],
       };
-    case "SHOW_USER":
-      return {
-        ...state,
-        users: [...state.users.slice(-1)]
-      };
-    // frontend difficulty recognizing the user
-    case "FETCH_USER_DETAILS":
-      return {
-        id: action.user.id,
-        email: action.user.email,
-        username: action.user.username,
-      };
     // If this reducer doesn't recognize the action type, or doesn't
     // care about this specific action, return the existing state unchanged
     default:
@@ -88,3 +76,18 @@ export default users;
 
 
 // state.users.lastIndexOf(user => user.id && action.id)
+
+
+
+    // case "SHOW_USER":
+    //   return {
+    //     ...state,
+    //     users: [...state.users.slice(-1)]
+    //   };
+    // // frontend difficulty recognizing the user
+    // case "FETCH_USER_DETAILS":
+    //   return {
+    //     id: action.user.id,
+    //     email: action.user.email,
+    //     username: action.user.username,
+    //   };
