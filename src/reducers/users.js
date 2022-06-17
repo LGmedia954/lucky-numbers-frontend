@@ -35,7 +35,6 @@ const users = (state = initialState, action) => {
       };
     // frontend difficulty recognizing the user
     case "FETCH_USER_DETAILS":
-      // debugger
       return {
         id: action.user.id,
         email: action.user.email,

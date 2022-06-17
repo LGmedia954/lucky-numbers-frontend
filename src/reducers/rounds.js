@@ -24,7 +24,8 @@ const rounds = (state = initialState, action) => {
     case "SHOW_USER_ROUND":
       return {
         ...state,
-        rounds: [...state.rounds.slice(-1)],
+        // need to check
+        rounds: [...state.rounds.filter(round => round.id === action.user.id)],
       };
 
     default:
@@ -35,6 +36,12 @@ const rounds = (state = initialState, action) => {
 export default rounds;
 
 
+
+// case "SHOW_USER_ROUND":
+//   return {
+//     ...state,
+//     rounds: [...state.rounds.slice(-1)],
+//   };
 
 // case "ADD_ROUND":
 //   return {
@@ -91,19 +98,6 @@ export default rounds;
 //     ...state,
 //     rounds: [...state.rounds, action.round]
 //   };
-
-
-
-// case "DELETE_USER_ROUND":
-//   return {
-//     rounds: [
-//       ...state.rounds.filter(round => round !== action.round)
-//     ]
-//   };
-
-// case "DELETE_USER_ROUND":
-//   const rounds = state.rounds.filter(round => round.id !== action.id);
-//   return {...state, rounds }
 
 
 

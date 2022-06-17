@@ -21,7 +21,7 @@ class Round extends Component {
   }
 }
 
-const mapStateToProps = ({ rounds }) => ({ rounds })
+const mapStateToProps = ({ round }) => ({ round })
 
 const mapDispatchToProps = (dispatch) => {
   return { actions: bindActionCreators(actions, dispatch) }
@@ -84,11 +84,3 @@ export default connect(mapStateToProps, mapDispatchToProps)(Round)
   
 // export default Round;
 
-
-
-// handleOnClick() {
-//   this.props.deleteUserRound(this.props.round.id);
-// }
-// <button className="tiny ui inverted yellow button" onClick={() => this.handleOnClick()}> X </button>
-
-// <button className="tiny ui inverted yellow button">Delete</button>
