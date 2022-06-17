@@ -24,8 +24,7 @@ const rounds = (state = initialState, action) => {
     case "SHOW_USER_ROUND":
       return {
         ...state,
-        // need to check
-        rounds: [...state.rounds.filter.lastIndexOf(round => round.user_id === action.user.id)],
+        rounds: [...state.rounds.lastIndexOf(round => round.id === action.userId)]
       };
 
     default:

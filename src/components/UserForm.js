@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUser, showUser, fetchUserDetails } from '../actions/users';
+// import { addUser, showUser, fetchUserDetails } from '../actions/users';
+import { addUser } from '../actions/users';
 export class UserForm extends Component {
 
   state = {
@@ -62,8 +63,8 @@ export class UserForm extends Component {
 // mapDispatchToProps may be an object where each field is an action creator.
 const mapDispatchToProps = {
   addUser,
-  showUser,
-  fetchUserDetails,
+  // showUser,
+  // fetchUserDetails,
 }
 
 export default connect(null, mapDispatchToProps)(UserForm);
