@@ -19,6 +19,10 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+// Provider component from React Redux passes the store
+// so that the components (containers, etc.) can read the store 
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

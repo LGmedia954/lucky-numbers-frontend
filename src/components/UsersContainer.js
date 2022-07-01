@@ -15,12 +15,26 @@ class UsersContainer extends Component {
 }
 
 const mapStateToProps = ({ users }) => ({ users })
+// Maps the redux store state to the props of the Users component 
+// that are related to the data from the redux store. 
+// MapsStateToProps takes the redux store state and returns the props that I need
+// to parse through the presentation for this component, to render it with the current state.
+// The above is shorthand without breaking out the props details.
+// It returns the props that depend on the current state of the redux store. 
+// In this case, we only want usernames.
 
 const mapDispatchToProps = (dispatch) => {
   return { actions: bindActionCreators(actions, dispatch) }
 }
+// Maps the dispatch method of the store to the callback props of Users component.
+// It specifies the behavior. That is, which callback prop dispatches which action.
+// The MapDispatchToProps function accepts the dispatch method from the store as the only argument 
+// and returns the props that should be passed to the users component and that depends on the dispatch method.
 
 export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
+// by using the { connect } function provided by react-redux library, 
+// we pass MapsStateToProps as the first argument and MapDispatchTheProps as the second. 
+// For the connect method to work, we have to pass the component that I wanted to wrap and pass the props to.
 
 
 

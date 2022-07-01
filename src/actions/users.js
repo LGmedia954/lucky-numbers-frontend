@@ -12,6 +12,7 @@ export const getUsers = () => {
       .then((users) => {
         console.log(users)
         dispatch({ type: "SET_USERS", users })
+        // we are dispatching an action
       });
   };
 };
