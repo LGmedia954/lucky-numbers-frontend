@@ -17,12 +17,24 @@ import './index.css'
 class App extends React.Component {
   componentDidMount() {
     this.props.getUsers();
+    // We say this.props.getUsers(); and not getUsers(); because we need to Connect the component.
+    // Connect is a higher order component that maps state and actions from the store via props.
+    // For this project I used the lifecycle method componentDidMount() to align with curriculum 
+    // but could use function components with hooks and Redux Toolkit. Many recent updates!
     this.props.getRounds();
   }
   render() {
     if (this.props.loading) {
       return <h3>Loading Users and Rounds...</h3>;
     }
+// A React.Component class must have a render() method. It's the only Required method in a class component.
+// When called, the render() function examines this.props and this.state and for this app, returns 2 arrays.
+
+// componentDidMount method is called once, just after initial render, for current props and state
+// creating new DOM elements or setting up asynchronous functions.
+// https://reactjs.org/docs/react-component.html
+
+
 
     return (
       <div className="App">
