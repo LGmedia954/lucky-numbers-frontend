@@ -33,8 +33,11 @@ class App extends React.Component {
 // When called, the render() function examines this.props and this.state and for this app, returns 2 arrays.
 
 // componentDidMount method is called once, just after initial render, for current props and state
-// creating new DOM elements or setting up asynchronous functions.
+// creating new DOM elements, or setting up asynchronous functions.
 // https://reactjs.org/docs/react-component.html
+
+// The prop, this.props.loading is set by the parent component.The above check is good practice 
+// if by chance there's a network error affecting data load, which will break our code.
 
 
 

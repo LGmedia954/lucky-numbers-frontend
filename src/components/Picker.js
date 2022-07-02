@@ -12,6 +12,7 @@ export class Picker extends Component {
   }
   // Constructor is the only place where we should assign this.state directly. 
   // In all other methods, we need to use this.setState() instead.
+  // This component is independent state. The purpose is to engage the user.
 
   handleClick() {
     const min = Math.ceil(1);
