@@ -19,8 +19,10 @@ class App extends React.Component {
     this.props.getUsers();
     // We say this.props.getUsers(); and not getUsers(); because we need to Connect the component.
     // Connect is a higher order component that maps state and actions from the store via props.
+    // A higher-order component is a function that takes a component and returns a new component.
     // For this project I used the lifecycle method componentDidMount() to align with curriculum 
-    // but could use function components with hooks and Redux Toolkit. Many recent updates!
+    // but could use function components with hooks and Redux Toolkit. Many recent updates.
+    // With our fetch call from actions, componentDidMount populates local component state.
     this.props.getRounds();
   }
   render() {

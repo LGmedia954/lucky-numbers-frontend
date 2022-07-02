@@ -17,6 +17,17 @@ export const getUsers = () => {
   };
 };
 
+// The fetch() method allows us to make an HTTP request to the backend. 
+// Here, we are using the GET method to request data from our endpoint, which is a Rails API.
+// We populate data with AJAX calls in the componentDidMount lifecycle method. 
+// This is so we can use setState to update components when the data is retrieved.
+
+// Asynchronous JavaScript And XML (AJAX) uses a combination of 
+// the browser built-in XMLHttpRequest object (to request data from a web server) 
+// and JavaScript and HTML DOM (to display or use the data).
+
+
+
 export const addUser = (user) => {
   return (dispatch) => {
     fetch("http://localhost:3000/api/v1/users", {
