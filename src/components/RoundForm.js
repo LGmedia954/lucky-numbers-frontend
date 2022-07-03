@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { addRound, showUserRound } from "../actions/rounds";
 
 class RoundForm extends React.Component {
-  
+
   state = {
     title: '',
     pick_one: '',
@@ -12,7 +12,7 @@ class RoundForm extends React.Component {
     pick_four: '',
     pick_five: '',
     pick_six: '',
-    user_id:JSON.parse(localStorage.getItem('id'))
+    user_id: JSON.parse(localStorage.getItem('id'))
   }
 
   handleTitleChange = event => {
@@ -82,43 +82,43 @@ class RoundForm extends React.Component {
             <input className="ui small input"
               type="text" name="title" id="title" placeholder="Game Title"
               value={this.state.title}
-              onChange={this.handleTitleChange}/>
+              onChange={this.handleTitleChange} />
           </div><br />
           <div>
             <input className="ui small input"
               type="text" name="pick_one" id="pick_one" placeholder="Pick 1"
               value={this.state.pick_one}
-              onChange={this.handleNumOneChange}/>
+              onChange={this.handleNumOneChange} />
           </div><br />
           <div>
             <input className="ui small input"
               type="text" name="pick_two" id="pick_two" placeholder="Pick 2"
               value={this.state.pick_two}
-              onChange={this.handleNumTwoChange}/>
+              onChange={this.handleNumTwoChange} />
           </div><br />
           <div>
             <input className="ui small input"
               type="text" name="pick_three" id="pick_three" placeholder="Pick 3"
               value={this.state.pick_three}
-              onChange={this.handleNumThreeChange}/>
+              onChange={this.handleNumThreeChange} />
           </div><br />
           <div>
             <input className="ui small input"
               type="text" name="pick_four" id="pick_four" placeholder="Pick 4"
               value={this.state.pick_four}
-              onChange={this.handleNumFourChange}/>
+              onChange={this.handleNumFourChange} />
           </div><br />
           <div>
             <input className="ui small input"
               type="text" name="pick_five" id="pick_five" placeholder="Pick 5"
               value={this.state.pick_five}
-              onChange={this.handleNumFiveChange}/>
+              onChange={this.handleNumFiveChange} />
           </div><br />
           <div>
             <input className="ui small input"
               type="text" name="pick_six" id="pick_six" placeholder="Pick 6"
               value={this.state.pick_six}
-              onChange={this.handleNumSixChange}/>
+              onChange={this.handleNumSixChange} />
           </div><br />
           <input type="submit" className="ui inverted yellow button" />
         </form>
@@ -165,8 +165,8 @@ export default connect(null, mapDispatchToProps)(RoundForm);
   //     this.fetchData(this.props.user.id);
   //   }
   // }
-  // You may call setState() immediately in componentDidUpdate() 
-  // but note that it must be wrapped in a condition like above, 
+  // You may call setState() immediately in componentDidUpdate()
+  // but note that it must be wrapped in a condition like above,
   // or you’ll cause an infinite loop.
 
 
