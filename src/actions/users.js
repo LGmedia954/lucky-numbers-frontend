@@ -30,6 +30,9 @@ export const getUsers = () => {
 // componentDidMount works with our initial fetch requests (organized into actions folders) 
 // to load users and also load rounds when we launch our application.
 
+// When we dispatch an action, we want the Store to know about it.
+
+
 
 export const addUser = (user) => {
   return (dispatch) => {

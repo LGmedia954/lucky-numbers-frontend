@@ -23,6 +23,9 @@ export const store = configureStore({
 // This logic can include side effects, such as async requests or generating random values, 
 // as well as logic that requires dispatching multiple actions or access to the Redux store state.
 
+// When we dispatch an action, we want the Store to know about it. 
+// When Reducers detect an action they are interested in, they update the state in response.
+
 
 
 

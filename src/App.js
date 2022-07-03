@@ -36,8 +36,8 @@ class App extends React.Component {
 // creating new DOM elements, or setting up asynchronous functions.
 // https://reactjs.org/docs/react-component.html
 
-// The prop, this.props.loading is set by the parent component.The above check is good practice 
-// if by chance there's a network error affecting data load, which will break our code.
+// The prop, this.props.loading is set by the parent component. The above check is good practice 
+// if by chance there's a network error affecting data load, which would break our code.
 
 
 
