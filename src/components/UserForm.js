@@ -60,7 +60,6 @@ export class UserForm extends Component {
 };
 
 // Object Shorthand Form​
-// mapDispatchToProps may be an object where each field is an action creator.
 const mapDispatchToProps = {
   addUser,
   showUser,
@@ -68,44 +67,3 @@ const mapDispatchToProps = {
 
 export default connect(null, mapDispatchToProps)(UserForm);
 
-
-
-// Dan Abramov thread
-// const mapStateToProps = (state, ownProps) => {
-//   const id = ownProps.params.id;
-//   return { id };
-// };
-
-
-
-// const mapStateToProps = (state, ownProps) => ({
-  // user: state.users[ownProps.id],
-// })
-
-
-
-// Alternative forms:
-// export default connect(null, { addUser })(UserForm);
-
-
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     addUser: formData => dispatch({ type: 'ADD_USER', payload: formData })
-//   }
-// }
-
-// export default connect(null, mapDispatchToProps)(UserForm);
-
-
-
-// const mapStateToProps(state, ownProps) {
-//   return {
-//     id: state.user.id,
-//     email: state.user.email,
-//     username: state.user.username
-//   }
-
-// function mapDispatchToProps(dispatch) {
-//   return { actions: bindActionCreators(actions, dispatch) }
-// }
